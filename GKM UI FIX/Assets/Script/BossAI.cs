@@ -21,10 +21,13 @@ public class BossAI : MonoBehaviour
 
     public float health = 1000f;
     public float enemyDamage;
+    public float HP;
 
 
     private float signatureAttackCooldown = 0f;
     private bool isSignatureAttackReady = true;
+
+    [SerializeField] private HPENEMY _healthbar;
 
     void Start()
     {
@@ -33,6 +36,8 @@ public class BossAI : MonoBehaviour
         boxCollider = GetComponentInChildren<BoxCollider>();
         rb = GetComponent<Rigidbody>();
         questManager = FindObjectOfType<BossQuest>();
+        HP = health;
+        _healthbar.UpdateHealthBar(health, HP);
     }
 
     void Update()
@@ -174,10 +179,14 @@ public class BossAI : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        health -= amount;
-        if (health <= 0) 
+        HP -= Random.Range(0.5f, 1.5f);
+        if (HP <= 0) 
         {
             Die();
+        }
+        else
+        {
+            _healthbar.UpdateHealthBar(health, HP);
         }
     }
 

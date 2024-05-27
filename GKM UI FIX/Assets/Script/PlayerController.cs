@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     ItemOnGround item;
     public bool isFPressed = false;
 
+    [SerializeField] private HealthBar _healthbar;
+
 
     private void Awake()
     {
@@ -48,6 +50,7 @@ public class PlayerController : MonoBehaviour
         combatPlayer = GetComponent<CombatPlayer>();
         HP = maxHP;
         item = GetComponent<ItemOnGround>();
+        _healthbar.UpdateHealthBar(maxHP, HP);
     }
 
     void Update()
@@ -148,10 +151,14 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        HP -= amount;
+        HP -= Random.Range(0.5f, 1.5f);
         if (HP <= 0)
         {
             Die();
+        }
+        else
+        {
+            _healthbar.UpdateHealthBar(maxHP, HP);
         }
     }
 

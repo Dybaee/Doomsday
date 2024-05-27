@@ -20,6 +20,8 @@ public class EnemyAI : MonoBehaviour
     public float HP;
     public float maxHP = 25;
 
+    [SerializeField] private HPENEMY _healthbar;
+
     public float enemyDamage;
 
     // Start is called before the first frame update
@@ -30,6 +32,7 @@ public class EnemyAI : MonoBehaviour
         pController = GetComponentInChildren<PlayerController>();
         hpDrop = GetComponentInChildren<HpOnGround>();
         HP = maxHP;
+        _healthbar.UpdateHealthBar(maxHP, HP);
     }
 
 
@@ -64,11 +67,15 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        HP -= amount;
+        HP -= Random.Range(0.5f, 1.5f);
         if (HP <= 0)
         {
             Die();
             hpDrop.DropHP();
+        }
+        else
+        {
+            _healthbar.UpdateHealthBar(maxHP, HP);
         }
     }
 

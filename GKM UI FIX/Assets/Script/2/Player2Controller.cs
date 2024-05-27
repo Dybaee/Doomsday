@@ -24,6 +24,8 @@ public class Player2Controller : MonoBehaviour
     private float turnSmoothVelocity;
     private Vector3 velocity;
 
+    [SerializeField] private HealthBar _healthbar;
+
     private Combat2Player combatPlayer;
 
     private bool isAlive = true; // Tracking player life
@@ -44,6 +46,7 @@ public class Player2Controller : MonoBehaviour
         combatPlayer = GetComponent<Combat2Player>();
         HP = maxHP;
         item = GetComponent<ItemOnGround>();
+        _healthbar.UpdateHealthBar(maxHP,HP);
     }
 
     void Update()
@@ -149,10 +152,14 @@ public class Player2Controller : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        HP -= amount;
+        HP -= Random.Range(0.5f, 1.5f);
         if (HP <= 0)
         {
             Die();
+        }
+        else
+        {
+            _healthbar.UpdateHealthBar(maxHP, HP);
         }
     }
 

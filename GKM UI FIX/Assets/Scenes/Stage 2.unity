@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1131,7 +1131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counter: 3
   enemies:
-  - {fileID: 1095052968861575564, guid: 06312c6ea0347ac4db194c305cc00b51, type: 3}
+  - {fileID: 517967464862477521, guid: bf7ae5a339f5d8d42b9992671d9ceabe, type: 3}
 --- !u!4 &1487979694
 Transform:
   m_ObjectHideFlags: 0
@@ -1314,7 +1314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counter: 2
   enemies:
-  - {fileID: 5899763443272100947, guid: 1ee903a5ac4576147b6fbcf6d1ca92c3, type: 3}
+  - {fileID: 5904731290553288995, guid: ca2a8e89fb4df244d9fdc87491dd25f3, type: 3}
 --- !u!4 &1568259099
 Transform:
   m_ObjectHideFlags: 0
@@ -7661,6 +7661,7 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   HP: 500
   maxHP: 500
+  _healthbar: {fileID: 7747079552114854912}
   isFPressed: 0
 --- !u!4 &5525954331219269588
 Transform:
@@ -9911,6 +9912,7 @@ GameObject:
   - component: {fileID: 7747079552114854910}
   - component: {fileID: 7747079552114854909}
   - component: {fileID: 7747079552114854908}
+  - component: {fileID: 7747079552114854912}
   m_Layer: 5
   m_Name: UI HP
   m_TagString: Untagged
@@ -10006,6 +10008,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &7747079552114854912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7747079552114854851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f1dea0cbd93b54bb87e07df40405ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthbarSprite: {fileID: 7747079552639958665}
+  _ReduceSpeed: 2
 --- !u!224 &7747079552319528888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10417,11 +10433,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 7482667652216324306, guid: dbe73f56c16a511449a5016bef0e70ed,
+    type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
