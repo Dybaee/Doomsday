@@ -26,10 +26,12 @@ public class Player2Controller : MonoBehaviour
     private Vector3 velocity;
 
     [SerializeField] private HealthBar _healthbar;
+    [SerializeField] GameObject _setting;
 
     private Combat2Player combatPlayer;
 
     private bool isAlive = true; // Tracking player life
+    bool gamePaused;
 
     ItemOnGround item;
     public bool isFPressed = false;
@@ -57,6 +59,20 @@ public class Player2Controller : MonoBehaviour
             Move();
             Jump();
             Run();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gamePaused = !gamePaused;
+        }
+
+        if(gamePaused)
+        {
+            _setting.SetActive(true);
+        }
+        else
+        {
+            _setting.SetActive(false);
         }
     }
 

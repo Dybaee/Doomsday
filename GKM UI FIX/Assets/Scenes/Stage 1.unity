@@ -10082,6 +10082,7 @@ MonoBehaviour:
   interactionDistance: 2
   isFPressed: 0
   _healthbar: {fileID: 7747079553272496128}
+  _setting: {fileID: 8004226353932356701}
 --- !u!1 &5193608927496291691
 GameObject:
   m_ObjectHideFlags: 0

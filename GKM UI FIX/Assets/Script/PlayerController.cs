@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     public bool isFPressed = false;
 
     [SerializeField] private HealthBar _healthbar;
+    [SerializeField] GameObject _setting;
+
+    bool gamePaused;
 
 
     private void Awake()
@@ -61,6 +64,20 @@ public class PlayerController : MonoBehaviour
             Jump();
             Run();
             TakingItem();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gamePaused = !gamePaused;
+        }
+
+        if (gamePaused)
+        {
+            _setting.SetActive(true);
+        }
+        else
+        {
+            _setting.SetActive(false);
         }
     }
 
