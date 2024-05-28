@@ -10,4 +10,9 @@ public class MainmenuMovement : MonoBehaviour
     {
         SceneManager.LoadScene("CutScene1");
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -9,6 +9,8 @@ public class Combat2Player : MonoBehaviour
     public GameObject swordUsed;
     public GameObject[] enemyPrefab;
     public float range = 5f;
+    public AudioSource source;
+    public AudioClip clip;
 
     private ItemOnGround itemSword;
     Animator anim;
@@ -30,6 +32,7 @@ public class Combat2Player : MonoBehaviour
             {
                 if (Input.GetButtonDown("Fire1"))
                 {
+                    source.PlayOneShot(clip);
                     PerformComboAttack();
                     Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
                     foreach (var hitCollider in hitColliders)
@@ -42,6 +45,7 @@ public class Combat2Player : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("Fire2"))
                 {
+                    source.PlayOneShot(clip);
                     PerformRightButtonAttack();
                     Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
                     foreach (var hitCollider in hitColliders)

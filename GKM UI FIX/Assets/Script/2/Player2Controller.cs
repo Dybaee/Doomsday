@@ -17,6 +17,7 @@ public class Player2Controller : MonoBehaviour
     private float velocityThreshold = 0.1f;
     public float HP;
     public float maxHP = 500;
+    
 
     private float movementSpeed;
     private bool isRunning;
