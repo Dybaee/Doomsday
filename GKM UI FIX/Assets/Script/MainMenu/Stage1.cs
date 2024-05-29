@@ -7,6 +7,6 @@ public class Stage1 : MonoBehaviour
 {
     void OnEnable()
     {
-        SceneManager.LoadScene("Stage 1", LoadSceneMode.Single);
+        SceneManager.LoadScene("Video", LoadSceneMode.Single);
     }
 }

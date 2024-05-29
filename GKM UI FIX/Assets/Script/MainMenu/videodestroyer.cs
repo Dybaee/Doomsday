@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class videodestroyer : MonoBehaviour
 {
@@ -18,5 +19,6 @@ public class videodestroyer : MonoBehaviour
     void Destroyvideo(VideoPlayer vp)
     {
         _vImage.SetActive(false);
+        SceneManager.LoadScene("Stage 1", LoadSceneMode.Single);
     }
 }

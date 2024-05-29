@@ -1326,6 +1326,30 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 499804367}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &499804369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5738886165837155385, guid: 0e6f8d739681c60439fe175f9cc9abe0,
+    type: 3}
+  m_PrefabInstance: {fileID: 499804367}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &499804370 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5738886164376741685, guid: 0e6f8d739681c60439fe175f9cc9abe0,
+    type: 3}
+  m_PrefabInstance: {fileID: 499804367}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &540373200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,6 +2206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2083814273}
   - component: {fileID: 2083814274}
+  - component: {fileID: 2083814275}
   m_Layer: 0
   m_Name: QuestManager
   m_TagString: Untagged
@@ -2217,6 +2242,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questStatusText: {fileID: 7747079552555101008}
+--- !u!114 &2083814275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083814272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0a5f2a05dbc0c4b9d138f8f6b22052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgmSlider: {fileID: 499804370}
+  sfxSlider: {fileID: 499804369}
 --- !u!1 &2118283548
 GameObject:
   m_ObjectHideFlags: 0
