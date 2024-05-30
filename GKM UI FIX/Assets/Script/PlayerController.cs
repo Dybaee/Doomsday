@@ -69,15 +69,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gamePaused = !gamePaused;
+            Time.timeScale = 0f;
         }
 
         if (gamePaused)
         {
             _setting.SetActive(true);
+            Time.timeScale = 0f;
         }
         else
         {
             _setting.SetActive(false);
+            Time.timeScale = 1f;
         }
     }
 

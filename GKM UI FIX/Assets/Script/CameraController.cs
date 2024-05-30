@@ -34,5 +34,20 @@ public class CameraController : MonoBehaviour
 
         transform.position = focusPosition - targetRotation * Vector3.forward * distance;
         transform.rotation = targetRotation;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Cursor.lockState == CursorLockMode.Locked) 
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+            }
+            
+        }
     }
 }
