@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] bool invertX;
     [SerializeField] bool invertY;
 
+    private bool isPause = false;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -20,6 +22,37 @@ public class CameraController : MonoBehaviour
     }
 
     private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            Pause();
+        }
+
+        if (!isPause)
+        {
+            RotateCamera();
+        }
+    }
+
+    public void Pause()
+    {
+        isPause = !isPause;
+
+        if (isPause)
+        {
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+    }
+
+    public void RotateCamera()
     {
         float invertXVal = invertX ? -1 : 1;
         float invertYVal = invertY ? -1 : 1;
@@ -34,20 +67,5 @@ public class CameraController : MonoBehaviour
 
         transform.position = focusPosition - targetRotation * Vector3.forward * distance;
         transform.rotation = targetRotation;
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (Cursor.lockState == CursorLockMode.Locked) 
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
-            
-        }
     }
 }
