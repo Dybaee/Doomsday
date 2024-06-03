@@ -3,17 +3,44 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class VolumeSlider : MonoBehaviour
 {
+    [Header("----- Audio Source -----")]
+    [SerializeField] AudioSource _bgmSound;
+    [SerializeField] AudioSource _sfxSound;
+
+    [Header("----- Audio Clip -----")]
+    [SerializeField] AudioClip _sfxClip;
+    [SerializeField] AudioClip _bgmClip;
+
+    [SerializeField] private AudioMixer _mixer;
+
+    public static VolumeSlider instance;
+
     [SerializeField] Slider bgmSlider;
     [SerializeField] Slider sfxSlider;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        if(!PlayerPrefs.HasKey("bgmVolume"))
+        _bgmSound.clip = _bgmClip;
+        _bgmSound.Play();
+        if (!PlayerPrefs.HasKey("bgmVolume"))
         {
             PlayerPrefs.SetFloat("bgmVolume", 1);
             Load();
@@ -29,10 +56,17 @@ public class VolumeSlider : MonoBehaviour
         }
     }
 
-    public void ChangeVolume()
+    public void ChangebgmVolume()
     {
-        AudioListener.volume = bgmSlider.value;
-        AudioListener.volume = sfxSlider.value;
+        float volume = bgmSlider.value;
+        _mixer.SetFloat("_bgm", Mathf.Log10(volume) * 20);
+        Save();
+    }
+
+    public void ChangesfxVolume()
+    {
+        float volume = sfxSlider.value;
+        _mixer.SetFloat("_sfx", Mathf.Log10(volume)*20);
         Save();
     }
 
