@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1141449265057350264}
   - component: {fileID: 5034957136438141021}
+  - component: {fileID: 8651588916572991546}
   m_Layer: 0
   m_Name: Batu 2
   m_TagString: Untagged
@@ -24,7 +25,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003356735327612360}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 483.5313, y: 6.4089236, z: 743.96246}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,6 +32,7 @@ Transform:
   m_Children:
   - {fileID: 8536771413317607564}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!205 &5034957136438141021
 LODGroup:
@@ -52,6 +53,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5092179812080016601}
   m_Enabled: 1
+--- !u!136 &8651588916572991546
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003356735327612360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7652471728347115337
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,13 +92,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7652471728347115337}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1141449265057350264}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2826409412245671436
 MeshFilter:
