@@ -465,10 +465,8 @@ MonoBehaviour:
     m_Bits: 128
   HP: 125
   maxHP: 125
+  _healthbar: {fileID: 0}
   enemyDamage: 13
-  range: 15
-  sightRange: 5
-  attackRange: 2
 --- !u!1 &1061792210366745479
 GameObject:
   m_ObjectHideFlags: 0

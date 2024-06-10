@@ -1605,6 +1605,7 @@ MonoBehaviour:
     m_Bits: 64
   HP: 150
   maxHP: 150
+  _healthbar: {fileID: 0}
   enemyDamage: 15
 --- !u!54 &4799213803523757791
 Rigidbody:

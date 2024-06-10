@@ -1621,8 +1621,8 @@ MonoBehaviour:
   jumpForce: 3
   gravity: 50
   turnSmoothTime: 0.1
-  HP: 5
-  maxHP: 500
+  HP: 100
+  maxHP: 100
   knockbackForce: 10
   _healthbar: {fileID: 501402366803527685}
   _setting: {fileID: 2509331322440815039}
@@ -1724,6 +1724,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &868848464
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483751138}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 3.6614015
+  m_Height: 22.422157
+  m_Direction: 1
+  m_Center: {x: -0.126044, y: 10.711022, z: 2.7949554e-10}
 --- !u!1001 &999228244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2211,9 +2225,9 @@ AudioSource:
   m_GameObject: {fileID: 1271222597}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -7125626987223128207, guid: ba3a2e63584d7b64da4736a7eb1685fd,
+  OutputAudioMixerGroup: {fileID: -7125626987223128207, guid: 8fe832fe08f68f14989f24770197c682,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: acacc88b6f672304a97594ccbae4461b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6278,11 +6292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d145b0b4d0ef2c945aef2bf934e8d16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 17
   range: 15
   aggroRange: 7
   player: {fileID: 868848460}
-  health: 800
+  health: 350
   enemyDamage: 150
   knockbackForce: 10
   healthBar: {fileID: 598226145}
