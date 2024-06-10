@@ -9,8 +9,8 @@ public class CombatPlayer : MonoBehaviour
     public GameObject swordUsed;
     public GameObject[] enemyPrefab;
     public float range = 5f;
-    public AudioSource source;
-    public AudioClip clip;
+    [SerializeField] AudioClip[] audioClips;
+    AudioSource audioSource;
 
     private ItemOnGround itemSword;
     Animator anim;
@@ -22,6 +22,7 @@ public class CombatPlayer : MonoBehaviour
         comboIndex = 0; // First attack in the combo
         itemSword = GetComponent<ItemOnGround>();
         IsAttacking = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -32,7 +33,8 @@ public class CombatPlayer : MonoBehaviour
             {
                 if (Input.GetButtonDown("Fire1"))
                 {
-                    source.PlayOneShot(clip);
+                    audioSource.clip = audioClips[0];
+                    audioSource.Play();
                     PerformComboAttack();
                     Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
                     foreach (var hitCollider in hitColliders)
@@ -45,7 +47,8 @@ public class CombatPlayer : MonoBehaviour
                 }
                 else if (Input.GetButtonDown("Fire2"))
                 {
-                    source.PlayOneShot(clip);
+                    audioSource.clip = audioClips[1];
+                    audioSource.Play();
                     PerformRightButtonAttack();
                     Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
                     foreach (var hitCollider in hitColliders)
@@ -64,7 +67,7 @@ public class CombatPlayer : MonoBehaviour
 
         void PerformComboAttack()
         {
-            IsAttacking = true;
+        IsAttacking = true;
             string[] comboAttacks = { "Attack1", "Attack2" };
 
             // Trigger Combo
