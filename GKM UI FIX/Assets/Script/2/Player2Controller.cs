@@ -17,7 +17,7 @@ public class Player2Controller : MonoBehaviour
     private float velocityThreshold = 0.1f;
     public float HP;
     public float maxHP = 500;
-    
+    public float knockbackForce = 10f;
 
     private float movementSpeed;
     private bool isRunning;
@@ -30,17 +30,15 @@ public class Player2Controller : MonoBehaviour
 
     private Combat2Player combatPlayer;
 
-    private bool isAlive = true; // Tracking player life
+    private bool isAlive = true;
     bool gamePaused;
 
     ItemOnGround item;
     public bool isFPressed = false;
 
-
-    private void Awake()
-    {
-        
-    }
+    private Vector3 knockbackDirection;
+    private float knockbackTimer;
+    private float knockbackDuration = 0.5f; // Knockback Effect
 
     void Start()
     {
@@ -49,33 +47,25 @@ public class Player2Controller : MonoBehaviour
         combatPlayer = GetComponent<Combat2Player>();
         HP = maxHP;
         item = GetComponent<ItemOnGround>();
-        _healthbar.UpdateHealthBar(maxHP,HP);
+        _healthbar.UpdateHealthBar(maxHP, HP);
     }
 
     void Update()
     {
         if (isAlive)
         {
-            Move();
-            Jump();
-            Run();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            gamePaused = !gamePaused;
-            Time.timeScale = 0f;
-        }
-
-        if (gamePaused)
-        {
-            _setting.SetActive(true);
-            Time.timeScale = 0f;
-        }
-        else
-        {
-            _setting.SetActive(false);
-            Time.timeScale = 1f;
+            if (knockbackTimer > 0)
+            {
+                // Apply knockback
+                knockbackTimer -= Time.deltaTime;
+                controller.Move(knockbackDirection * knockbackForce * Time.deltaTime);
+            }
+            else
+            {
+                Move();
+                Jump();
+                Run();
+            }
         }
     }
 
@@ -96,7 +86,6 @@ public class Player2Controller : MonoBehaviour
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
 
             // Calculate movement direction
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
@@ -183,4 +172,10 @@ public class Player2Controller : MonoBehaviour
         }
     }
 
+    public void ApplyKnockback(Vector3 direction, float force)
+    {
+        knockbackDirection = direction;
+        knockbackForce = force;
+        knockbackTimer = knockbackDuration;
+    }
 }

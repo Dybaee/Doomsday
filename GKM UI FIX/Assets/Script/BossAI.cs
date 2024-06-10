@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class BossAI : MonoBehaviour
 {
-    Player2Controller pController;
+    private Player2Controller playerController;
     private BossQuest questManager;
 
     public float speed;
@@ -13,126 +14,108 @@ public class BossAI : MonoBehaviour
     private Animator anim;
     private Rigidbody rb;
 
-    BoxCollider boxCollider;
-
+    private BoxCollider boxCollider;
     private bool isAlive = true;
 
     public Transform player;
 
     public float health = 1000f;
     public float enemyDamage;
-    public float HP;
+    private float currentHealth;
 
-
-    private float signatureAttackCooldown = 0f;
     private bool isSignatureAttackReady = true;
+    private float attackCooldown = 2f;
+    private float attackTimer;
+    public float knockbackForce = 10f;
+    bool isKnockback = false;
 
-    [SerializeField] private HPENEMY _healthbar;
+    [SerializeField] private HPENEMY healthBar;
+    [SerializeField] private NavMeshAgent navAgent;
 
     void Start()
     {
-        pController = GetComponent<Player2Controller>();
+        playerController = player.GetComponent<Player2Controller>();
         anim = GetComponent<Animator>();
         boxCollider = GetComponentInChildren<BoxCollider>();
         rb = GetComponent<Rigidbody>();
         questManager = FindObjectOfType<BossQuest>();
-        HP = health;
-        _healthbar.UpdateHealthBar(health, HP);
+        currentHealth = health;
+        healthBar.UpdateHealthBar(health, currentHealth);
+        navAgent = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
-        if (!isDead())
+        if (isAlive)
         {
-            if (!inRange())
-            {
-                Idle();
-            }
-            else
+            attackTimer -= Time.deltaTime;
+
+            if (InRange())
             {
                 Chase();
-                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && inAggroRange())
+                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && InAggroRange())
                 {
-                    if (isSignatureAttackReady) // Check if signature attack is ready
+                    if (attackTimer <= 0)
                     {
-                        SignatureAttack();
-                    }
-                    else
-                    {
-                        Attack();
+                        if (isSignatureAttackReady)
+                        {
+                            SignatureAttack();
+                        }
+                        else
+                        {
+                            Attack();
+                        }
                     }
                 }
             }
-        }
-        else
-        {
-            Die();
-        }
-    }
-
-    bool inRange()
-    {
-
-        if (Vector3.Distance(transform.position, player.position) < range)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
+            else
+            {
+                Idle();
+            }
         }
     }
 
-    bool inAggroRange()
+    bool InRange()
     {
-        if (Vector3.Distance(transform.position, player.position) < aggroRange)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return Vector3.Distance(transform.position, player.position) < range;
+    }
+
+    bool InAggroRange()
+    {
+        return Vector3.Distance(transform.position, player.position) < aggroRange;
     }
 
     void Idle()
     {
         anim.SetBool("isRunning", false);
+        navAgent.isStopped = true;
     }
 
     void Chase()
     {
-        transform.LookAt(player.position);
-        //controller.SimpleMove(transform.forward * speed);
-        Vector3 direction = player.position - transform.position;
-        rb.MovePosition(transform.position + direction * speed * Time.deltaTime);
-        GetComponent<Animator>().SetBool("isRunning", true);
+        anim.SetBool("isRunning", true);
+        navAgent.isStopped = false;
+        navAgent.SetDestination(player.position);
     }
 
     void Attack()
     {
-       anim.SetTrigger("Attack");
-       transform.LookAt(transform.position);
+        anim.SetTrigger("Attack");
+        transform.LookAt(player.position);
+        attackTimer = attackCooldown;
     }
 
     void SignatureAttack()
     {
         anim.SetTrigger("SignatureAttack");
-        //transform.LookAt(transform.position);
-
-        // Set cooldown 
-        StartCoroutine(SignatureAttackCooldown());
+        StartCoroutine(SignatureAttackCD());
         isSignatureAttackReady = false;
+        attackTimer = attackCooldown;
     }
 
-    IEnumerator SignatureAttackCooldown()
+    IEnumerator SignatureAttackCD()
     {
-        // Set cooldown 
-        float cooldownDuration = 10f;
-
-        // Wait for cooldown duration
-        yield return new WaitForSeconds(cooldownDuration);
-
+        yield return new WaitForSeconds(10f);
         isSignatureAttackReady = true;
     }
 
@@ -140,19 +123,9 @@ public class BossAI : MonoBehaviour
     {
         anim.SetTrigger("Die");
         isAlive = false;
+        navAgent.isStopped = true;
         Destroy(gameObject, 5f);
         questManager.OnBossKilled();
-    }
-    bool isDead()
-    {
-        if (health <= 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 
     void EnableAttack()
@@ -174,20 +147,37 @@ public class BossAI : MonoBehaviour
             Debug.Log("Player Get Hit BOSS!");
             player.TakeDamage(enemyDamage);
         }
+    }
 
+    public void ApplyKnockback()
+    {
+        if (!isKnockback)
+        {
+            Vector3 knockbackDirection = (player.position - transform.position).normalized;
+            player.GetComponent<Player2Controller>().ApplyKnockback(knockbackDirection, knockbackForce);
+            isKnockback = true;
+        }
+    }
+    void ResetKnockback()
+    {
+        isKnockback = false;
+    }
+
+    void TriggerKnockback()
+    {
+        ApplyKnockback();
     }
 
     public void TakeDamage(float amount)
     {
-        HP -= Random.Range(0.5f, 1.5f);
-        if (HP <= 0) 
+        currentHealth -= amount;
+        if (currentHealth <= 0)
         {
             Die();
         }
         else
         {
-            _healthbar.UpdateHealthBar(health, HP);
+            healthBar.UpdateHealthBar(health, currentHealth);
         }
     }
-
 }
