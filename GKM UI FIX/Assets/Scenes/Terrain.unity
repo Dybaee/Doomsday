@@ -918,7 +918,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1248,8 +1248,8 @@ RectTransform:
   m_Father: {fileID: 994960063}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1393,7 +1393,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1777,8 +1777,8 @@ RectTransform:
   m_Father: {fileID: 79728549}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2461,7 +2461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &416413716152550202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18455,11 +18455,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6c7a857a9d52574eaef7b76ea1d9904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 7772287726508527521}
+  followTarget: {fileID: 2549800117554387938}
   rotationSpeed: 2
-  distance: 8
-  minVerticalAngle: 5
-  maxVerticalAngle: 50
+  distance: 5
+  minVerticalAngle: 0
+  maxVerticalAngle: 45
   framingOffset: {x: 0, y: 0}
   invertX: 0
   invertY: 0
@@ -25345,7 +25345,7 @@ GameObject:
   - component: {fileID: 5360401341040250661}
   - component: {fileID: 5360401341040250660}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: OpenDoorText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25360,8 +25360,8 @@ RectTransform:
   m_GameObject: {fileID: 5360401341040250663}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.627216, y: 0.627216, z: 0.627216}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2441196535776159041}
   m_RootOrder: 4
@@ -28674,6 +28674,7 @@ MonoBehaviour:
   turnSmoothTime: 0.1
   HP: 500
   maxHP: 500
+  knockbackForce: 10
   _healthbar: {fileID: 2441196535776172674}
   _setting: {fileID: 416413716152550200}
   isFPressed: 0
@@ -30575,7 +30576,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6960144099497940251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -495.42438, y: -555.01904, z: 584.6}
+  m_LocalPosition: {x: -495.42438, y: -555.01904, z: 734.07}
   m_LocalScale: {x: 0.13773607, y: 0.13773605, z: 0.13773607}
   m_ConstrainProportionsScale: 0
   m_Children:

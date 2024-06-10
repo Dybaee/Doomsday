@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
 
     private bool isRunning;
-    private bool isJumping;
     private float turnSmoothVelocity;
     private Vector3 velocity;
     private float lastClickedTime;
@@ -77,13 +76,11 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 PlayJumpAnimation();
-                isJumping = true;
                 velocity.y = Mathf.Sqrt(2f * jumpForce * gravity);
             }
         }
         else
         {
-            isJumping = false;
             velocity.y -= gravity * Time.deltaTime;
         }
 
