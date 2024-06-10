@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1141449265057350264}
   - component: {fileID: 5034957136438141021}
   - component: {fileID: 8651588916572991546}
+  - component: {fileID: 7382943767902885816}
   m_Layer: 0
   m_Name: Batu 2
   m_TagString: Untagged
@@ -62,11 +63,24 @@ CapsuleCollider:
   m_GameObject: {fileID: 2003356735327612360}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &7382943767902885816
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003356735327612360}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.7825623, y: 1.5361781, z: 2.6049805}
+  m_Center: {x: -0.42097473, y: 0.26808906, z: -0.05822754}
 --- !u!1 &7652471728347115337
 GameObject:
   m_ObjectHideFlags: 0
