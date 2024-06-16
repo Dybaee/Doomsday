@@ -2022,7 +2022,7 @@ GameObject:
   - component: {fileID: 1487223876875426860}
   - component: {fileID: 86866938500149290}
   - component: {fileID: 6208050871646522417}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2426,12 +2426,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1260934865276207139}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1104479571063519179 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2174213622440081384, guid: e3fc7fcde95f342419eb63c269315af7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1260934865276207139}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1120239710043333652
 Transform:
   m_ObjectHideFlags: 0
@@ -2477,7 +2471,7 @@ GameObject:
   - component: {fileID: 7721830783326829136}
   - component: {fileID: 2095542590118211367}
   - component: {fileID: 7721830783326829137}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2533,6 +2527,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2027231864}
     m_Modifications:
+    - target: {fileID: 2174213622031125097, guid: e3fc7fcde95f342419eb63c269315af7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6238146246085993387, guid: e3fc7fcde95f342419eb63c269315af7,
         type: 3}
       propertyPath: m_RootOrder
@@ -2635,6 +2634,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3fc7fcde95f342419eb63c269315af7, type: 3}
+--- !u!4 &1260934865276207140 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2174213622440081384, guid: e3fc7fcde95f342419eb63c269315af7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1260934865276207139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1271429244841450248
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3793,7 +3798,7 @@ GameObject:
   - component: {fileID: 6506333721511522613}
   - component: {fileID: 9166159925485089927}
   - component: {fileID: 9166159925485089928}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3997,7 +4002,7 @@ GameObject:
   - component: {fileID: 4414603925172115765}
   - component: {fileID: 7893857084029408802}
   - component: {fileID: 8768525509235893306}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5192,7 +5197,7 @@ GameObject:
   - component: {fileID: 7403396180171417600}
   - component: {fileID: 318571692894749763}
   - component: {fileID: 7403396180171417601}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6018,26 +6023,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5130655154467929760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5130655154467929771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6c7a857a9d52574eaef7b76ea1d9904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followTarget: {fileID: 1104479571063519179}
-  rotationSpeed: 2
-  distance: 5
-  minVerticalAngle: 0
-  maxVerticalAngle: 45
-  framingOffset: {x: 0, y: 0}
-  invertX: 0
-  invertY: 0
 --- !u!81 &5130655154467929764
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6149,7 +6134,7 @@ GameObject:
   - component: {fileID: 5130655154467929765}
   - component: {fileID: 5130655154467929764}
   - component: {fileID: 5130655154467929767}
-  - component: {fileID: 5130655154467929760}
+  - component: {fileID: 5130655154467929772}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6157,6 +6142,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5130655154467929772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5130655154467929771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c7a857a9d52574eaef7b76ea1d9904, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followTarget: {fileID: 1260934865276207140}
+  rotationSpeed: 2
+  distance: 5
+  minVerticalAngle: -45
+  maxVerticalAngle: 45
+  framingOffset: {x: 0, y: 0}
+  invertX: 0
+  invertY: 0
+  collisionCam: 0.2
 --- !u!64 &5132237507295066753
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9137,7 +9143,7 @@ GameObject:
   - component: {fileID: 6756174318553983802}
   - component: {fileID: 7114750831886408382}
   - component: {fileID: 7114750831886408383}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9232,7 +9238,7 @@ GameObject:
   - component: {fileID: 5289060011674572872}
   - component: {fileID: 5123596636596201680}
   - component: {fileID: 7067188363715241924}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12609,7 +12615,7 @@ GameObject:
   - component: {fileID: 2458738512763262800}
   - component: {fileID: 8335324154489875389}
   - component: {fileID: 9205906856122422302}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12627,5 +12633,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.019999998, y: 0.019999994, z: 0.00001148891}
-  m_Center: {x: 0.000000015351052, y: -0.0000000071307547, z: -0.0002516515}
+  m_Size: {x: 0.019999998, y: 0.019999994, z: 0}
+  m_Center: {x: 0.000000015351052, y: -0.000000007130754, z: -0.00025739687}

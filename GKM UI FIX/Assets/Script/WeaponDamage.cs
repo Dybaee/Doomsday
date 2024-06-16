@@ -33,6 +33,18 @@ public class WeaponDamage : MonoBehaviour
                 enemy.TakeDamage(addDamage);
             }
         }
+
+        var bird = other.gameObject.GetComponent<BossStage>();
+        if (bird != null)
+        {
+            Debug.Log("Bird Get Hit");
+            bird.TakeDamage(damage);
+            if (itemCrown != null)
+            {
+                bird.TakeDamage(addDamage);
+            }
+        }
+
         else
         {
             var boss = other.gameObject.GetComponent<BossAI>();
@@ -43,7 +55,7 @@ public class WeaponDamage : MonoBehaviour
                     boss.TakeDamage(damage);
                     boss.TakeDamage(addDamage);
                 }
-                
+
             }
         }
         

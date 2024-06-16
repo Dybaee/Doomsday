@@ -21,14 +21,14 @@ public class HpStats : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        PlayerController pController = other.GetComponent<PlayerController>(); // Get component
+        PlayerController pController = other.GetComponent<PlayerController>(); 
 
         if (pController != null)
         {
             Debug.Log("HP Collected!");
             Destroy(gameObject);
             pController.HP += addHealth;
-            pController.HP = Mathf.Min(pController.HP, pController.maxHP); // Ensure HP doesn't exceed maxHP
+            pController.HP = Mathf.Min(pController.HP, pController.maxHP); // Ensure HP doesnt exceed maxHP
             Debug.Log("Current Health: " + pController.HP);
         }
     }

@@ -42,6 +42,7 @@ public class BossAI : MonoBehaviour
         currentHealth = health;
         healthBar.UpdateHealthBar(health, currentHealth);
         navAgent = GetComponent<NavMeshAgent>();
+        rb.isKinematic = true;
     }
 
     void Update()

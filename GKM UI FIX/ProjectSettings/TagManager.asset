@@ -9,6 +9,7 @@ TagManager:
   - Enemies
   - Weapon
   - DoorZone
+  - IgnoreCamera
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - UI
   - Player
   - NavMesh
-  - 
+  - Ignore Raycast
   - 
   - 
   - 
