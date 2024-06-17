@@ -29,8 +29,9 @@ public class BossAI : MonoBehaviour
     public float knockbackForce = 10f;
     bool isKnockback = false;
 
-    [SerializeField] private HPENEMY healthBar;
+    [SerializeField] private HPBOSS healthBar;
     [SerializeField] private NavMeshAgent navAgent;
+    [SerializeField] GameObject healthUI_;
 
     void Start()
     {
@@ -53,6 +54,7 @@ public class BossAI : MonoBehaviour
 
             if (InRange())
             {
+                healthUI_.SetActive(true);
                 Chase();
                 if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && InAggroRange())
                 {
@@ -71,6 +73,7 @@ public class BossAI : MonoBehaviour
             }
             else
             {
+                healthUI_.SetActive(false);
                 Idle();
             }
         }
