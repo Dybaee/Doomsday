@@ -9,8 +9,6 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: BesiLampu 2_Base_color
   m_Shader: {fileID: 4800000, guid: 63a90426d42b698448966291201d6716, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - _DETAILSOURCE_SPECULARALPHA
   - _SOURCE_SPECULARALPHA
@@ -26,7 +24,6 @@ Material:
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
-  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -55,7 +52,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b6e7304e195338c4c9f57072660503ce, type: 3}
+        m_Texture: {fileID: 2800000, guid: 65637be63eb8936488d55dcad34b7dc9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
