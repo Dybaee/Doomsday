@@ -3,7 +3,17 @@ guid: 62b8a0f1c085d2149bd30129e92d1a85
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gigi
+    second: {fileID: 2100000, guid: 1d517d88a295c3f459402ec61eddf0d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 1f0b1d566b6be4d4294f9c25589909b5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
