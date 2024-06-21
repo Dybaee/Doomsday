@@ -62417,6 +62417,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c974eea0742aca4439c018be314c1bcd, type: 3}
+--- !u!95 &691662135345560353 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7081331582093980800, guid: c974eea0742aca4439c018be314c1bcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 691662135345560352}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &698436334141526627
 Transform:
   m_ObjectHideFlags: 0
@@ -88890,7 +88896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412cbd70047c31a4c9ed961718b416da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimationController: {fileID: 0}
+  myAnimationController: {fileID: 691662135345560353}
   loadingScreen: {fileID: 5360401340518063620}
   transitionTime: 1
 --- !u!1 &4378778546876281991
@@ -103510,7 +103516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412cbd70047c31a4c9ed961718b416da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myAnimationController: {fileID: 0}
+  myAnimationController: {fileID: 691662135345560353}
   loadingScreen: {fileID: 5360401340518063620}
   transitionTime: 1
 --- !u!4 &9159470627126194107

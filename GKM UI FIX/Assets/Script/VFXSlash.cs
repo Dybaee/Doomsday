@@ -10,16 +10,16 @@ public class VFXSlash : MonoBehaviour
     [SerializeField] private VisualEffect Slash3;
     public void Attack1()
     {
-        Slash1.Play();
+        Slash1?.Play();
     }
 
     public void Attack2()
     {
-        Slash2.Play();
+        Slash2?.Play();
     }
 
     public void Attack3()
     {
-        Slash3.Play();
+        Slash3?.Play();
     }
 }
