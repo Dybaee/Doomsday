@@ -8,18 +8,46 @@ public class VFXSlash : MonoBehaviour
     [SerializeField] private VisualEffect Slash1;
     [SerializeField] private VisualEffect Slash2;
     [SerializeField] private VisualEffect Slash3;
+    [SerializeField] private VisualEffect StompBoss;
+    [SerializeField] private VisualEffect DeadBoss;
     public void Attack1()
     {
-        Slash1?.Play();
+        if (Slash1 == null) { return; }
+        Slash1.Play();
     }
 
     public void Attack2()
     {
-        Slash2?.Play();
+        if (Slash2 != null)
+        {
+            Slash2.Play();
+        }
     }
 
     public void Attack3()
     {
-        Slash3?.Play();
+        if (Slash3 != null)
+        {
+            Slash3.Play();
+        }
+        return;
+    }
+
+    public void StompAttack()
+    {
+        if (StompBoss != null)
+        {
+            StompBoss.Play();
+        }
+        return;
+    }
+
+    public void DeathBoss()
+    {
+        if (DeadBoss != null)
+        {
+            DeadBoss.Play();
+        }
+        return;
     }
 }
