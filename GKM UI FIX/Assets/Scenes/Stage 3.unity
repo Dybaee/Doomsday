@@ -8667,6 +8667,8 @@ MonoBehaviour:
   healthBar: {fileID: 137242584}
   navAgent: {fileID: 2074424286204276347}
   healthUI_: {fileID: 137242582}
+  BossDeathFX: {fileID: 8867322866688336787, guid: d01aa2e0b0955b945804afaff1b6e557,
+    type: 3}
 --- !u!54 &1693922222514009340
 Rigidbody:
   m_ObjectHideFlags: 0

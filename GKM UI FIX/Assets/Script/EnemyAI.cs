@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.VFX;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class EnemyAI : MonoBehaviour
     HpOnGround hpDrop;
 
     [SerializeField] LayerMask groundLayer, playerLayer;
+    [SerializeField] GameObject SmokeDeathFX;
 
     Animator anim;
     BoxCollider boxCollider;
@@ -59,10 +61,11 @@ public class EnemyAI : MonoBehaviour
 
     public void Die()
     {
-        anim.SetTrigger("Die");
-        Debug.Log("Enemy Died!");
+        //anim.SetTrigger("Die");
+        //Debug.Log("Enemy Died!");
 
-        Destroy(gameObject, 3f);
+        //Destroy(gameObject, 3f);
+        StartCoroutine(DeathSequence());
     }
 
     public void TakeDamage(float amount)
@@ -79,5 +82,13 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-
+    private IEnumerator DeathSequence()
+    {
+        anim.SetTrigger("Die");
+        Debug.Log("Enemy Died!");
+        yield return new WaitForSeconds(3f);
+        Instantiate(SmokeDeathFX, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(gameObject);
+    }
 }

@@ -1802,9 +1802,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5904731290553288995}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0.23049259, y: 0, z: 5.209985}
-  m_LocalScale: {x: 0.58457, y: 0.58457, z: 0.58457}
+  m_LocalScale: {x: 0.53806746, y: 0.53806746, z: 0.53806746}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3668052325684702035}
@@ -1870,12 +1870,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 128
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
-  HP: 150
-  maxHP: 150
+  SmokeDeathFX: {fileID: 2622825226192774075, guid: 4f0bf47d63a251545ac4445908a6390b,
+    type: 3}
+  HP: 20
+  maxHP: 20
   _healthbar: {fileID: 1155726235670969640}
   enemyDamage: 15
 --- !u!54 &4795139275633914799

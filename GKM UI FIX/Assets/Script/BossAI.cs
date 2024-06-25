@@ -32,6 +32,7 @@ public class BossAI : MonoBehaviour
     [SerializeField] private HPBOSS healthBar;
     [SerializeField] private NavMeshAgent navAgent;
     [SerializeField] GameObject healthUI_;
+    [SerializeField] GameObject BossDeathFX;
 
     void Start()
     {
@@ -125,10 +126,23 @@ public class BossAI : MonoBehaviour
 
     void Die()
     {
+        //anim.SetTrigger("Die");
+        //isAlive = false;
+        //navAgent.isStopped = true;
+        //Destroy(gameObject, 5f);
+        //questManager.OnBossKilled();
+        StartCoroutine(DeathBoss());
+    }
+
+    private IEnumerator DeathBoss()
+    {
         anim.SetTrigger("Die");
         isAlive = false;
         navAgent.isStopped = true;
-        Destroy(gameObject, 5f);
+        yield return new WaitForSeconds(5f);
+        Instantiate(BossDeathFX, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1f);
+        Destroy(gameObject);
         questManager.OnBossKilled();
     }
 

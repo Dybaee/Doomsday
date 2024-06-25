@@ -409,10 +409,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundLayer:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 128
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  SmokeDeathFX: {fileID: 2622825226192774075, guid: 4f0bf47d63a251545ac4445908a6390b,
+    type: 3}
   HP: 125
   maxHP: 125
   _healthbar: {fileID: 8607942515507014309}

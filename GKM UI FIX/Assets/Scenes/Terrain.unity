@@ -173,11 +173,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1435101713}
     m_Modifications:
-    - target: {fileID: 4584583601386261345, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 5904731290553288995, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
       propertyPath: m_Name
@@ -187,21 +182,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53806746
       objectReference: {fileID: 0}
     - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
@@ -876,11 +856,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1435101713}
     m_Modifications:
-    - target: {fileID: 4584583601386261345, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 5904731290553288995, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
       propertyPath: m_Name
@@ -890,21 +865,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53806746
       objectReference: {fileID: 0}
     - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
@@ -1050,11 +1010,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Serigala Fix With Health (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 764491676341992870, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2244229047690085644, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
         type: 3}
@@ -1239,11 +1194,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1435101713}
     m_Modifications:
-    - target: {fileID: 4584583601386261345, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 5904731290553288995, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
       propertyPath: m_Name
@@ -1253,21 +1203,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53806746
       objectReference: {fileID: 0}
     - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
@@ -1334,11 +1269,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1435101713}
     m_Modifications:
-    - target: {fileID: 4584583601386261345, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 5904731290553288995, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
       propertyPath: m_Name
@@ -1348,21 +1278,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53806746
       objectReference: {fileID: 0}
     - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
@@ -1435,11 +1350,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1435101713}
     m_Modifications:
-    - target: {fileID: 4584583601386261345, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 5904731290553288995, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
       propertyPath: m_Name
@@ -1449,21 +1359,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53806746
       objectReference: {fileID: 0}
     - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
@@ -1561,11 +1456,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1435101713}
     m_Modifications:
-    - target: {fileID: 4584583601386261345, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 5904731290553288995, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
       propertyPath: m_Name
@@ -1575,21 +1465,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53806746
       objectReference: {fileID: 0}
     - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
@@ -1697,11 +1572,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Serigala Fix With Health (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 764491676341992870, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2244229047690085644, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
         type: 3}
@@ -8051,11 +7921,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Serigala Fix With Health (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 764491676341992870, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 2244229047690085644, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
         type: 3}
       propertyPath: m_RootOrder
@@ -8275,11 +8140,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Serigala Fix With Health (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 764491676341992870, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2244229047690085644, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
         type: 3}
@@ -8547,11 +8407,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Serigala Fix With Health (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 764491676341992870, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 2244229047690085644, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
         type: 3}
       propertyPath: m_RootOrder
@@ -8697,11 +8552,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Serigala Fix With Health (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 764491676341992870, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 2244229047690085644, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
         type: 3}
       propertyPath: m_RootOrder
@@ -8846,11 +8696,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Serigala Fix With Health (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 764491676341992870, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2244229047690085644, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
         type: 3}
@@ -9833,11 +9678,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Serigala Fix With Health (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 764491676341992870, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 2244229047690085644, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
         type: 3}
       propertyPath: m_RootOrder
@@ -9938,11 +9778,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Serigala Fix With Health
       objectReference: {fileID: 0}
-    - target: {fileID: 764491676341992870, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 2244229047690085644, guid: bf7ae5a339f5d8d42b9992671d9ceabe,
         type: 3}
       propertyPath: m_RootOrder
@@ -10019,11 +9854,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1435101713}
     m_Modifications:
-    - target: {fileID: 4584583601386261345, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 5904731290553288995, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
       propertyPath: m_Name
@@ -10033,21 +9863,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53806746
       objectReference: {fileID: 0}
     - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
@@ -10120,11 +9935,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1435101713}
     m_Modifications:
-    - target: {fileID: 4584583601386261345, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 5904731290553288995, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
       propertyPath: m_Name
@@ -10134,21 +9944,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.53806746
-      objectReference: {fileID: 0}
-    - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.53806746
       objectReference: {fileID: 0}
     - target: {fileID: 8156078488090967911, guid: ca2a8e89fb4df244d9fdc87491dd25f3,
         type: 3}
@@ -58547,7 +58342,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37424
+  m_Name: pb_Mesh30170
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -86994,6 +86789,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 64
+  SmokeDeathFX: {fileID: 2622825226192774075, guid: 4f0bf47d63a251545ac4445908a6390b,
+    type: 3}
   HP: 150
   maxHP: 150
   _healthbar: {fileID: 1155726234550280654}

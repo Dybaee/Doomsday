@@ -12256,6 +12256,8 @@ MonoBehaviour:
   Slash1: {fileID: 2588505429683355914}
   Slash2: {fileID: 5034576631953491753}
   Slash3: {fileID: 5271883450265607454}
+  StompBoss: {fileID: 0}
+  DeadBoss: {fileID: 0}
 --- !u!114 &7570024456618716728
 MonoBehaviour:
   m_ObjectHideFlags: 0
