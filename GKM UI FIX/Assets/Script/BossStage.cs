@@ -26,8 +26,12 @@ public class BossStage : MonoBehaviour
     private float attackCooldown = 2f;
     private float attackTimer;
 
+
     [SerializeField] private HPENEMY healthBar;
-    [SerializeField] private NavMeshAgent navAgent;
+
+    private state currentState;
+    enum state{Idle, Chase, Attack, SignatureAttack }
+
 
     void Start()
     {
@@ -36,29 +40,36 @@ public class BossStage : MonoBehaviour
         boxCollider = GetComponentInChildren<BoxCollider>();
         rb = GetComponent<Rigidbody>();
         currentHealth = health;
-        navAgent = GetComponent<NavMeshAgent>();
-        rb.isKinematic = true;
     }
 
     void Update()
     {
         if (isAlive)
         {
+            currentState = state.Idle;
+
             attackTimer -= Time.deltaTime;
 
-            if (InRange())
+            if (InRange() && currentState == state.Idle) 
             {
-                Chase();
+                currentState = state.Chase;
+                if (currentState == state.Chase)
+                {
+                    Chase();
+                }
+
                 if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && InAggroRange())
                 {
                     if (attackTimer <= 0)
                     {
                         if (isSignatureAttackReady)
                         {
+                            currentState = state.SignatureAttack;
                             SignatureAttack();
                         }
                         else
                         {
+                            currentState = state.Attack; 
                             Attack();
                         }
                     }
@@ -70,6 +81,7 @@ public class BossStage : MonoBehaviour
             }
         }
     }
+
 
     bool InRange()
     {
@@ -84,14 +96,17 @@ public class BossStage : MonoBehaviour
     void Idle()
     {
         anim.SetBool("isRunning", false);
-        navAgent.isStopped = true;
     }
 
     void Chase()
     {
         anim.SetBool("isRunning", true);
-        navAgent.isStopped = false;
-        navAgent.SetDestination(player.position);
+        Vector3 moveDirection = (player.position - transform.position).normalized;
+        if (Vector3.Distance (transform.position, player.position) >= aggroRange)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, player.position - new Vector3(0, 0, 1), speed * Time.deltaTime);
+            transform.LookAt(player.position);
+        }
     }
 
     void Attack()
@@ -119,7 +134,6 @@ public class BossStage : MonoBehaviour
     {
         anim.SetTrigger("Die");
         isAlive = false;
-        navAgent.isStopped = true;
         Destroy(gameObject, 5f);
     }
 
@@ -142,7 +156,7 @@ public class BossStage : MonoBehaviour
             Debug.Log("Player Get Hit Bird!");
             player.TakeDamage(enemyDamage);
         }
-    } 
+    }
 
     public void TakeDamage(float amount)
     {
@@ -151,5 +165,11 @@ public class BossStage : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, aggroRange);
     }
 }

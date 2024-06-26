@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class BossAI : MonoBehaviour
 {
+    // Variable
     private Player2Controller playerController;
     private BossQuest questManager;
 
@@ -23,14 +24,13 @@ public class BossAI : MonoBehaviour
     public float enemyDamage;
     private float currentHealth;
 
-    private bool isSignatureAttackReady = true;
+    private bool isSignatureReady = true;
     private float attackCooldown = 2f;
     private float attackTimer;
     public float knockbackForce = 10f;
     bool isKnockback = false;
 
     [SerializeField] private HPBOSS healthBar;
-    [SerializeField] private NavMeshAgent navAgent;
     [SerializeField] GameObject healthUI_;
     [SerializeField] GameObject BossDeathFX;
 
@@ -43,25 +43,24 @@ public class BossAI : MonoBehaviour
         questManager = FindObjectOfType<BossQuest>();
         currentHealth = health;
         healthBar.UpdateHealthBar(health, currentHealth);
-        navAgent = GetComponent<NavMeshAgent>();
-        rb.isKinematic = true;
+        rb.isKinematic = false;
     }
 
     void Update()
     {
         if (isAlive)
         {
-            attackTimer -= Time.deltaTime;
+            attackTimer -= Time.deltaTime;  // Decrease the attack timer
 
             if (InRange())
             {
                 healthUI_.SetActive(true);
                 Chase();
-                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && InAggroRange())
+                if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && InAggroRange()) // if not attacking and player is in aggro range
                 {
-                    if (attackTimer <= 0)
+                    if (attackTimer <= 0) // if attack cooldown is over
                     {
-                        if (isSignatureAttackReady)
+                        if (isSignatureReady)
                         {
                             SignatureAttack();
                         }
@@ -82,55 +81,51 @@ public class BossAI : MonoBehaviour
 
     bool InRange()
     {
-        return Vector3.Distance(transform.position, player.position) < range;
+        return Vector3.Distance(transform.position, player.position) < range; // Check if the player is within range
     }
 
     bool InAggroRange()
     {
-        return Vector3.Distance(transform.position, player.position) < aggroRange;
+        return Vector3.Distance(transform.position, player.position) < aggroRange; // Check if the player is within aggro range
     }
 
     void Idle()
     {
         anim.SetBool("isRunning", false);
-        navAgent.isStopped = true;
+        rb.velocity = Vector3.zero; // Stop movement
     }
 
     void Chase()
     {
         anim.SetBool("isRunning", true);
-        navAgent.isStopped = false;
-        navAgent.SetDestination(player.position);
+        Vector3 direction = (player.position - transform.position).normalized; // Calculate direction towards the player
+        rb.velocity = direction * speed;
+        transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z)); // Boss look at player
     }
 
     void Attack()
     {
         anim.SetTrigger("Attack");
         transform.LookAt(player.position);
-        attackTimer = attackCooldown;
+        attackTimer = attackCooldown; // reset attack timer
     }
 
     void SignatureAttack()
     {
         anim.SetTrigger("SignatureAttack");
         StartCoroutine(SignatureAttackCD());
-        isSignatureAttackReady = false;
+        isSignatureReady = false;
         attackTimer = attackCooldown;
     }
 
     IEnumerator SignatureAttackCD()
     {
         yield return new WaitForSeconds(10f);
-        isSignatureAttackReady = true;
+        isSignatureReady = true;
     }
 
     void Die()
     {
-        //anim.SetTrigger("Die");
-        //isAlive = false;
-        //navAgent.isStopped = true;
-        //Destroy(gameObject, 5f);
-        //questManager.OnBossKilled();
         StartCoroutine(DeathBoss());
     }
 
@@ -138,7 +133,8 @@ public class BossAI : MonoBehaviour
     {
         anim.SetTrigger("Die");
         isAlive = false;
-        navAgent.isStopped = true;
+        Destroy(healthUI_);
+        rb.velocity = Vector3.zero; // Stop movement
         yield return new WaitForSeconds(5f);
         Instantiate(BossDeathFX, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(1f);
@@ -171,11 +167,12 @@ public class BossAI : MonoBehaviour
     {
         if (!isKnockback)
         {
-            Vector3 knockbackDirection = (player.position - transform.position).normalized;
-            player.GetComponent<Player2Controller>().ApplyKnockback(knockbackDirection, knockbackForce);
+            Vector3 knockbackDirection = (player.position - transform.position).normalized; // Calculate knockback direction
+            player.GetComponent<Player2Controller>().ApplyKnockback(knockbackDirection, knockbackForce); // Apply knockback to player
             isKnockback = true;
         }
     }
+
     void ResetKnockback()
     {
         isKnockback = false;

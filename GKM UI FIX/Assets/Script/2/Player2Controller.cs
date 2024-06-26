@@ -35,6 +35,7 @@ public class Player2Controller : MonoBehaviour
 
     ItemOnGround item;
     public bool isFPressed = false;
+    public BoxCollider attackCollider;
 
     private Vector3 knockbackDirection;
     private float knockbackTimer;
@@ -193,5 +194,15 @@ public class Player2Controller : MonoBehaviour
         knockbackDirection = direction;
         knockbackForce = force;
         knockbackTimer = knockbackDuration;
+    }
+
+    void EnableAttack()
+    {
+        attackCollider.enabled = true;
+    }
+
+    void DisableAttack()
+    {
+        attackCollider.enabled = false;
     }
 }

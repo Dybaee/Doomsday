@@ -8657,7 +8657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d145b0b4d0ef2c945aef2bf934e8d16e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 17
+  speed: 30
   range: 15
   aggroRange: 7
   player: {fileID: 5183050954028252857}
@@ -8665,7 +8665,6 @@ MonoBehaviour:
   enemyDamage: 150
   knockbackForce: 10
   healthBar: {fileID: 137242584}
-  navAgent: {fileID: 2074424286204276347}
   healthUI_: {fileID: 137242582}
   BossDeathFX: {fileID: 8867322866688336787, guid: d01aa2e0b0955b945804afaff1b6e557,
     type: 3}
