@@ -70,7 +70,7 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        HP -= Random.Range(0.5f, 1.5f);
+        HP -= amount;
         if (HP <= 0)
         {
             Die();

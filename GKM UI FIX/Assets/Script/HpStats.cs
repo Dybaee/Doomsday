@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class HpStats : MonoBehaviour
 {
-    PlayerController pController;
+    Player2Controller pController;
     public float addHealth = 100f;
 
     // Start is called before the first frame update
     void Start()
     {
-        pController = GetComponent<PlayerController>();
+        pController = GetComponent<Player2Controller>();
     }
 
     // Update is called once per frame
@@ -21,15 +21,14 @@ public class HpStats : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        PlayerController pController = other.GetComponent<PlayerController>(); 
+        Player2Controller pController = other.GetComponent<Player2Controller>();
 
-        if (pController != null)
+        if (other.CompareTag("Player"))  
         {
-            Debug.Log("HP Collected!");
-            Destroy(gameObject);
             pController.HP += addHealth;
-            pController.HP = Mathf.Min(pController.HP, pController.maxHP); // Ensure HP doesnt exceed maxHP
-            Debug.Log("Current Health: " + pController.HP);
+            pController.HP = Mathf.Min(pController.HP, pController.maxHP); // Ensure HP doesn't exceed maxHP
+            Debug.Log("HP Collected! Current Health: " + pController.HP);
+            Destroy(gameObject);
         }
     }
 }

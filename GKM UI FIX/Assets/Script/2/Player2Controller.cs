@@ -24,9 +24,11 @@ public class Player2Controller : MonoBehaviour
     private bool isJumping;
     private float turnSmoothVelocity;
     private Vector3 velocity;
+    public float totalHealth;
 
     [SerializeField] private HealthBar _healthbar;
     [SerializeField] GameObject _setting;
+    HpStats _hpStats;
 
     private Combat2Player combatPlayer;
 
@@ -46,6 +48,7 @@ public class Player2Controller : MonoBehaviour
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         combatPlayer = GetComponent<Combat2Player>();
+        _hpStats = GetComponent<HpStats>();
         HP = maxHP;
         item = GetComponent<ItemOnGround>();
         _healthbar.UpdateHealthBar(maxHP, HP);
@@ -178,7 +181,7 @@ public class Player2Controller : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        HP -= Random.Range(0.5f, 1.5f);
+        HP -= amount;
         if (HP <= 0)
         {
             Die();

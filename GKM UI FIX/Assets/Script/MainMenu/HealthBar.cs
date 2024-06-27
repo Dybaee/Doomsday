@@ -9,9 +9,9 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private float _ReduceSpeed = 2;
     private float _target = 1;
 
-    public void UpdateHealthBar(float maxHealth, float currentHelath)
+    public void UpdateHealthBar(float maxHealth, float currentHealth)
     {
-        _target = currentHelath / maxHealth;
+        _target = currentHealth / maxHealth;
     }
 
     void Update()

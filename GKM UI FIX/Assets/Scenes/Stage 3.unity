@@ -1157,12 +1157,13 @@ MonoBehaviour:
   jumpForce: 3
   gravity: 50
   turnSmoothTime: 0.1
-  HP: 100
-  maxHP: 100
+  HP: 1000
+  maxHP: 1000
   knockbackForce: 10
   _healthbar: {fileID: 501402366803527685}
   _setting: {fileID: 2509331322440815039}
   isFPressed: 0
+  attackCollider: {fileID: 1104479569597241208}
 --- !u!82 &868848463
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7376,8 +7377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf99ef0f5089ffd4eacc76cd2f0bc90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  addDamage: 7
+  damage: 10
+  addDamage: 13
+  itemCrown: {fileID: 4991757461302580334}
 --- !u!1 &1104479569597241211
 GameObject:
   m_ObjectHideFlags: 0
@@ -8611,12 +8613,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2074424286204276346}
-  - component: {fileID: 1693922222514009283}
   - component: {fileID: 1693922222514009282}
   - component: {fileID: 1693922222514009340}
   - component: {fileID: 1911898104}
   - component: {fileID: 2074424286204276347}
   - component: {fileID: 2074424286204276348}
+  - component: {fileID: 2074424286204276349}
   m_Layer: 8
   m_Name: Boss
   m_TagString: Enemies
@@ -8645,29 +8647,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1693922222514009283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693922222514009280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d145b0b4d0ef2c945aef2bf934e8d16e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  range: 15
-  aggroRange: 7
-  player: {fileID: 5183050954028252857}
-  health: 350
-  enemyDamage: 150
-  knockbackForce: 10
-  healthBar: {fileID: 137242584}
-  healthUI_: {fileID: 137242582}
-  BossDeathFX: {fileID: 8867322866688336787, guid: d01aa2e0b0955b945804afaff1b6e557,
-    type: 3}
 --- !u!54 &1693922222514009340
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10050,6 +10029,34 @@ MonoBehaviour:
   Slash3: {fileID: 0}
   StompBoss: {fileID: 1474359304}
   DeadBoss: {fileID: 1326410113}
+--- !u!114 &2074424286204276349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693922222514009280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6621e1faa65491b419ffe47c6a05e36c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  currentHealth: 250
+  range: 15
+  aggroRange: 2
+  player: {fileID: 5183050954028252857}
+  <anim>k__BackingField: {fileID: 1693922222514009282}
+  speed: 5
+  <rb>k__BackingField: {fileID: 1693922222514009340}
+  boxCollider: {fileID: 1964533265549511212}
+  enemyDamage: 1
+  isUlti: 0
+  timer: 0
+  Attacktimer: 10
+  knockbackForce: 10
+  BossDeathFX: {fileID: 8867322866688336787, guid: d01aa2e0b0955b945804afaff1b6e557,
+    type: 3}
 --- !u!1 &2076850630570308560
 GameObject:
   m_ObjectHideFlags: 0
