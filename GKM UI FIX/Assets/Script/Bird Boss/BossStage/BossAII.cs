@@ -25,6 +25,8 @@ public class BossAII : MonoBehaviour
 
     private BossQuest questManager;
     [SerializeField] GameObject BossDeathFX;
+    [SerializeField] private HPBOSS healthBar;
+    [SerializeField] GameObject healthUI_;
 
 
 
@@ -34,6 +36,7 @@ public class BossAII : MonoBehaviour
         anim = GetComponent<Animator>();
         timer = Attacktimer;
         currentHealth = health;
+        healthBar.UpdateHealthBar(health, currentHealth);
         questManager = FindObjectOfType<BossQuest>();
     }
 
@@ -41,6 +44,15 @@ public class BossAII : MonoBehaviour
     {
         if (!isAlive) return;
         currentState.Update();
+
+        if (PlayerInRange())
+        {
+            healthUI_.SetActive(true);
+        }
+        else
+        {
+            healthUI_.SetActive(false);
+        }
 
         if (timer <= 0 && !isUlti && PlayerInRange())
         {
@@ -107,6 +119,7 @@ public class BossAII : MonoBehaviour
     {
         anim.SetTrigger("Die");
         isAlive = false;
+        Destroy(healthUI_);
         rb.isKinematic = true;  // Disable Rigidbody physics 
         rb.velocity = Vector3.zero; // Stop movement
         yield return new WaitForSeconds(5f);
@@ -163,6 +176,10 @@ public class BossAII : MonoBehaviour
         if (health <= 0)
         {
             Defeated();
+        }
+        else
+        {
+            healthBar.UpdateHealthBar(health, currentHealth);
         }
     }
 

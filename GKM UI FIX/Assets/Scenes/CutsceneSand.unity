@@ -264,6 +264,8 @@ MonoBehaviour:
   Slash1: {fileID: 0}
   Slash2: {fileID: 0}
   Slash3: {fileID: 0}
+  StompBoss: {fileID: 0}
+  DeadBoss: {fileID: 0}
 --- !u!1 &19412860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3661,6 +3663,8 @@ MonoBehaviour:
   Slash1: {fileID: 0}
   Slash2: {fileID: 0}
   Slash3: {fileID: 0}
+  StompBoss: {fileID: 0}
+  DeadBoss: {fileID: 0}
 --- !u!1 &216557316
 GameObject:
   m_ObjectHideFlags: 0
@@ -8712,7 +8716,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 93b7540d26b42514a8c6811ac5031dcd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22539,6 +22543,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   addDamage: 7
+  itemCrown: {fileID: 0}
 --- !u!65 &1445393759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23493,6 +23498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   addDamage: 7
+  itemCrown: {fileID: 0}
 --- !u!65 &1612187447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36507,6 +36513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 5
   addDamage: 7
+  itemCrown: {fileID: 0}
 --- !u!1 &2549800119284537321
 GameObject:
   m_ObjectHideFlags: 0
@@ -41109,6 +41116,8 @@ MonoBehaviour:
   Slash1: {fileID: 0}
   Slash2: {fileID: 0}
   Slash3: {fileID: 0}
+  StompBoss: {fileID: 0}
+  DeadBoss: {fileID: 0}
 --- !u!4 &7777225047285185449
 Transform:
   m_ObjectHideFlags: 0
