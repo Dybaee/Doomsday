@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static System.Net.WebRequestMethods;
 
 public class Player2Controller : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class Player2Controller : MonoBehaviour
     private bool isJumping;
     private float turnSmoothVelocity;
     private Vector3 velocity;
+    private ParticleSystem WalkFX;
+    private Animator FTB;
+    private Animator DiedText;
 
     public Slider healthSlider;
     [SerializeField] GameObject _setting;
@@ -45,6 +49,7 @@ public class Player2Controller : MonoBehaviour
 
     void Start()
     {
+        WalkFX = GameObject.FindGameObjectWithTag("walkfx").GetComponent<ParticleSystem>();
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         combatPlayer = GetComponent<Combat2Player>();
@@ -54,6 +59,8 @@ public class Player2Controller : MonoBehaviour
         healthSlider.value = HP;
         item = GetComponent<ItemOnGround>();
         // Subscribe ke event OnHpChanged dari HpStats
+        FTB = GameObject.FindGameObjectWithTag("ftb").GetComponent<Animator>();
+        DiedText = GameObject.FindGameObjectWithTag("dietext").GetComponent<Animator>(); ;
     }
 
     void Update()
@@ -124,10 +131,22 @@ public class Player2Controller : MonoBehaviour
                 speed = 0.5f; // Walking
             }
             animator.SetFloat("Speed", speed, 0.1f, Time.deltaTime);
+
+            // Walk FX
+
+           if (WalkFX == null) { return; }
+           if (WalkFX.isStopped)
+           {
+                WalkFX.Play();
+           }
+           
         }
         else
         {
             animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime); // idle
+            
+            if (WalkFX == null) { return; }
+            WalkFX.Stop();
         }
     }
 
@@ -177,6 +196,10 @@ public class Player2Controller : MonoBehaviour
 
     IEnumerator Respawn()
     {
+        yield return new WaitForSeconds(2);
+        FTB.Play("FadeToBlack");
+        yield return new WaitForSeconds(1);
+        DiedText.Play("YouDied");
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

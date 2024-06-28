@@ -12,6 +12,9 @@ TagManager:
   - IgnoreCamera
   - Fire
   - HealingObject
+  - walkfx
+  - ftb
+  - dietext
   layers:
   - Default
   - TransparentFX

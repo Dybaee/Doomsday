@@ -5,6 +5,7 @@ public class HpStats : MonoBehaviour
 {
     Player2Controller pController;
     public float addHealth = 100f;
+    [SerializeField] GameObject HealthFX;
 
 
 
@@ -36,6 +37,7 @@ public class HpStats : MonoBehaviour
                     pController.healthSlider.value = pController.HP; // Memperbarui nilai slider HP
                 }
                 Debug.Log("HP Collected! Current Health: " + pController.HP);
+                Instantiate(HealthFX, transform.position, Quaternion.identity);
                 Destroy(gameObject); // Menghapus objek yang memberi efek heal
             }
         }
