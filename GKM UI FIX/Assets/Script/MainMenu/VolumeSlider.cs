@@ -47,14 +47,36 @@ public class VolumeSlider : MonoBehaviour
     public void ChangebgmVolume()
     {
         float volume = bgmSlider.value;
-        _mixer.SetFloat("_bgm", Mathf.Log10(volume) * 20);
+
+        // Set volume for BGM AudioSource
+        if (volume <= 0)
+        {
+            _bgmSound.volume = 0;
+        }
+        else
+        {
+            _bgmSound.volume = volume;
+            _mixer.SetFloat("_bgm", Mathf.Log10(volume) * 20);
+        }
+
         Save();
     }
 
     public void ChangesfxVolume()
     {
         float volume = sfxSlider.value;
-        _mixer.SetFloat("_sfx", Mathf.Log10(volume)*20);
+
+        // Set volume for SFX AudioSource
+        if (volume <= 0)
+        {
+            _sfxSound.volume = 0;
+        }
+        else
+        {
+            _sfxSound.volume = volume;
+            _mixer.SetFloat("_sfx", Mathf.Log10(volume) * 20);
+        }
+
         Save();
     }
 
