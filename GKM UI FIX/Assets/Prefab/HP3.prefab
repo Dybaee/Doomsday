@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 1501124730695013174}
   - component: {fileID: 1396020777771087071}
   - component: {fileID: 1396020777771087008}
-  - component: {fileID: 1396020777771087010}
+  - component: {fileID: -845060131484526816}
   m_Layer: 0
   m_Name: HP3
   m_TagString: Untagged
@@ -156,7 +156,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1396020777771087010
+--- !u!114 &-845060131484526816
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facea1f7d482ac044a0c90300f6537f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addHealth: 500
+  addHealth: 100
 --- !u!1 &5515236186672593272
 GameObject:
   m_ObjectHideFlags: 0

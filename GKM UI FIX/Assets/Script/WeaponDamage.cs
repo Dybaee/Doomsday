@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ProBuilder.MeshOperations;
+using UnityEngine.UI;
 
 public class WeaponDamage : MonoBehaviour
 {
@@ -46,8 +47,8 @@ public class WeaponDamage : MonoBehaviour
         if (bird != null)
         {
             Debug.Log("Bird Get Hit");
-            
             bird.TakeDamage(totalDamage);
+            
             return;
         }
 

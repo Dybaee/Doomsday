@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossAII : MonoBehaviour
 {
     private BossState currentState;
-    public float health = 100;
+    public float health;
     public float currentHealth;
 
     public float range;
@@ -25,8 +26,9 @@ public class BossAII : MonoBehaviour
 
     private BossQuest questManager;
     [SerializeField] GameObject BossDeathFX;
-    [SerializeField] private HPBOSS healthBar;
     [SerializeField] GameObject healthUI_;
+    public Slider healthSlider;
+
 
 
 
@@ -36,8 +38,10 @@ public class BossAII : MonoBehaviour
         anim = GetComponent<Animator>();
         timer = Attacktimer;
         currentHealth = health;
-        healthBar.UpdateHealthBar(health, currentHealth);
+        healthSlider.maxValue = health;
+        healthSlider.value = currentHealth;
         questManager = FindObjectOfType<BossQuest>();
+        
     }
 
     void Update()
@@ -170,17 +174,20 @@ public class BossAII : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float damage)
     {
-        health -= amount;
+        health -= damage;
+        currentHealth = health;
         if (health <= 0)
         {
             Defeated();
         }
-        else
-        {
-            healthBar.UpdateHealthBar(health, currentHealth);
-        }
+        UpdateBossHealthUI();
+    }
+
+    void UpdateBossHealthUI()
+    {
+        healthSlider.value = health;
     }
 
 }

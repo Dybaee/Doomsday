@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player2Controller : MonoBehaviour
 {
@@ -24,9 +25,8 @@ public class Player2Controller : MonoBehaviour
     private bool isJumping;
     private float turnSmoothVelocity;
     private Vector3 velocity;
-    public float totalHealth;
 
-    [SerializeField] private HealthBar _healthbar;
+    public Slider healthSlider;
     [SerializeField] GameObject _setting;
     HpStats _hpStats;
 
@@ -50,8 +50,10 @@ public class Player2Controller : MonoBehaviour
         combatPlayer = GetComponent<Combat2Player>();
         _hpStats = GetComponent<HpStats>();
         HP = maxHP;
+        healthSlider.maxValue = maxHP;
+        healthSlider.value = HP;
         item = GetComponent<ItemOnGround>();
-        _healthbar.UpdateHealthBar(maxHP, HP);
+        // Subscribe ke event OnHpChanged dari HpStats
     }
 
     void Update()
@@ -186,10 +188,8 @@ public class Player2Controller : MonoBehaviour
         {
             Die();
         }
-        else
-        {
-            _healthbar.UpdateHealthBar(maxHP, HP);
-        }
+        UpdatePlayerHealthUI();
+
     }
 
     public void ApplyKnockback(Vector3 direction, float force)
@@ -207,5 +207,13 @@ public class Player2Controller : MonoBehaviour
     void DisableAttack()
     {
         attackCollider.enabled = false;
+    }
+    void UpdatePlayerHealthUI()
+    {
+        healthSlider.value = HP;
+        if (_hpStats)
+        {
+            _hpStats.addHealth = healthSlider.value;
+        }
     }
 }

@@ -10,6 +10,8 @@ TagManager:
   - Weapon
   - DoorZone
   - IgnoreCamera
+  - Fire
+  - HealingObject
   layers:
   - Default
   - TransparentFX

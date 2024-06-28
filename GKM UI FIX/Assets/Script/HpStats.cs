@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class HpStats : MonoBehaviour
 {
     Player2Controller pController;
     public float addHealth = 100f;
+
+
+
+    // Event untuk memberi tahu perubahan HP
 
     // Start is called before the first frame update
     void Start()
@@ -16,19 +19,25 @@ public class HpStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Player2Controller pController = other.GetComponent<Player2Controller>();
-
-        if (other.CompareTag("Player"))  
+        if (other.CompareTag("Player"))
         {
-            pController.HP += addHealth;
-            pController.HP = Mathf.Min(pController.HP, pController.maxHP); // Ensure HP doesn't exceed maxHP
-            Debug.Log("HP Collected! Current Health: " + pController.HP);
-            Destroy(gameObject);
+            Player2Controller pController = other.GetComponent<Player2Controller>();
+            if (pController != null)
+            {
+                pController.HP += addHealth; // Menambahkan HP ke player
+                pController.HP = Mathf.Min(pController.HP, pController.maxHP);
+                if (pController.healthSlider != null)
+                {
+                    pController.healthSlider.value = pController.HP; // Memperbarui nilai slider HP
+                }
+                Debug.Log("HP Collected! Current Health: " + pController.HP);
+                Destroy(gameObject); // Menghapus objek yang memberi efek heal
+            }
         }
     }
 }

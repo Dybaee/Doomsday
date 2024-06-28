@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.VFX;
 
 public class EnemyAI : MonoBehaviour
@@ -21,8 +22,9 @@ public class EnemyAI : MonoBehaviour
     //public Health health;
     public float HP;
     public float maxHP = 25;
+    public Slider healthSlider;
 
-    [SerializeField] private HPENEMY _healthbar;
+
 
     public float enemyDamage;
 
@@ -34,7 +36,8 @@ public class EnemyAI : MonoBehaviour
         pController = GetComponentInChildren<PlayerController>();
         hpDrop = GetComponentInChildren<HpOnGround>();
         HP = maxHP;
-        _healthbar.UpdateHealthBar(maxHP, HP);
+        healthSlider.maxValue = maxHP;
+        healthSlider.value = HP;
     }
 
 
@@ -76,10 +79,13 @@ public class EnemyAI : MonoBehaviour
             Die();
             hpDrop.DropHP();
         }
-        else
-        {
-            _healthbar.UpdateHealthBar(maxHP, HP);
-        }
+        Debug.Log("Current Health after damage: " + HP);
+        UpdateHealthUI();
+    }
+
+    void UpdateHealthUI()
+    {
+        healthSlider.value = HP;
     }
 
     private IEnumerator DeathSequence()
