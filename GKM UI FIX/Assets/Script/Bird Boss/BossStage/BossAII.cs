@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class BossAII : MonoBehaviour
 {
@@ -128,9 +130,10 @@ public class BossAII : MonoBehaviour
         rb.velocity = Vector3.zero; // Stop movement
         yield return new WaitForSeconds(5f);
         Instantiate(BossDeathFX, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
         questManager.OnBossKilled();
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+        SceneManager.LoadScene("CSBoss");
     }
 
     void EnableAttack()

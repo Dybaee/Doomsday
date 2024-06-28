@@ -211,9 +211,5 @@ public class Player2Controller : MonoBehaviour
     void UpdatePlayerHealthUI()
     {
         healthSlider.value = HP;
-        if (_hpStats)
-        {
-            _hpStats.addHealth = healthSlider.value;
-        }
     }
 }
