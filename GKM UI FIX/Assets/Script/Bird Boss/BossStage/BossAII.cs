@@ -31,9 +31,6 @@ public class BossAII : MonoBehaviour
     [SerializeField] GameObject healthUI_;
     public Slider healthSlider;
 
-
-
-
     void Start()
     {
         ChangeState(new BossIdleState(this));
@@ -129,11 +126,10 @@ public class BossAII : MonoBehaviour
         rb.isKinematic = true;  // Disable Rigidbody physics 
         rb.velocity = Vector3.zero; // Stop movement        
         yield return new WaitForSeconds(5f);
-        this.gameObject.SetActive(false);
+        Destroy(this.gameObject, 3f);
         Instantiate(BossDeathFX, transform.position, Quaternion.identity);
         questManager?.OnBossKilled();
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene(7);
     }
 
     void EnableAttack()

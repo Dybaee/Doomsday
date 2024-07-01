@@ -62163,6 +62163,11 @@ PrefabInstance:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 5208037995009013375}
+    - target: {fileID: 7570024456618716728, guid: c974eea0742aca4439c018be314c1bcd,
+        type: 3}
+      propertyPath: regenAmountPerSecond
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 7570024456618716730, guid: c974eea0742aca4439c018be314c1bcd,
         type: 3}
       propertyPath: enemyPrefab.Array.data[3]

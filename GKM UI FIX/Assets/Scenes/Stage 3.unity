@@ -663,6 +663,53 @@ RectTransform:
   m_AnchoredPosition: {x: 583.0001, y: -651.9999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &194498951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194498952}
+  - component: {fileID: 194498953}
+  m_Layer: 0
+  m_Name: EndingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &194498952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194498951}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 758771304}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &194498953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194498951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b91aafba5c673d46b96ee85757ac7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boss: {fileID: 1693922222514009280}
+  delay: 3
+  sceneName: CSBoss
 --- !u!1 &229629543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2110,6 +2157,7 @@ Transform:
   - {fileID: 1982622615}
   - {fileID: 1098727781}
   - {fileID: 7470534921957120897}
+  - {fileID: 194498952}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2341,7 +2389,7 @@ MonoBehaviour:
   _setting: {fileID: 390637892}
   isFPressed: 0
   attackCollider: {fileID: 1104479569597241208}
-  regenAmountPerSecond: 50
+  regenAmountPerSecond: 25
   regenDelay: 5
 --- !u!82 &868848463
 AudioSource:
@@ -9906,8 +9954,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281855664878607222}
   m_LocalRotation: {x: 0.5, y: -0.49999997, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: -13.385866, y: 17.186226, z: 2.6598778}
-  m_LocalScale: {x: 52.690178, y: 52.690178, z: 52.690178}
+  m_LocalPosition: {x: -13.385866, y: 17.14, z: 2.6598778}
+  m_LocalScale: {x: 32.664223, y: 32.664223, z: 32.664223}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 543450653215995978}
