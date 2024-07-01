@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemOnGround : MonoBehaviour
 {
+    private GameObject shinyFX;
     public GameObject item;
     [SerializeField] Transform player;
     public bool isFPressed = false;
@@ -11,7 +12,7 @@ public class ItemOnGround : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        shinyFX = GameObject.FindGameObjectWithTag("ShinyFX");
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class ItemOnGround : MonoBehaviour
         if (isFPressed && other.CompareTag("Player"))
         {
             Destroy(gameObject);
+            shinyFX.SetActive(false);
             item.SetActive(true);
             CombatPlayer combatPlayer = other.GetComponent<CombatPlayer>();
             if (combatPlayer != null)

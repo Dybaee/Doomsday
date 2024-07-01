@@ -20,6 +20,7 @@ public class Player2Controller : MonoBehaviour
     public float HP;
     public float maxHP = 500;
     public float knockbackForce = 10f;
+    public CameraShake cameraShake;
 
     private float movementSpeed;
     private bool isRunning;
@@ -45,7 +46,7 @@ public class Player2Controller : MonoBehaviour
 
     // Knockback
     private Vector3 knockbackDirection;
-    private float knockbackTimer;
+    public float knockbackTimer { get; private set; }
     private float knockbackDuration = 0.5f; // Knockback Effect
 
     // Regen
@@ -78,6 +79,7 @@ public class Player2Controller : MonoBehaviour
             if (knockbackTimer > 0)
             {
                 // Apply knockback
+                StartCoroutine(cameraShake.Shake());
                 knockbackTimer -= Time.deltaTime;
                 controller.Move(knockbackDirection * knockbackForce * Time.deltaTime);
             }

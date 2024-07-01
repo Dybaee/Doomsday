@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Item2OnGround : MonoBehaviour
 {
+    private GameObject shinyFX;
     public GameObject item;
     [SerializeField] Transform player;
     public bool isFPressed = false;
@@ -16,6 +17,7 @@ public class Item2OnGround : MonoBehaviour
     {
         weaponDamage = GetComponent<WeaponDamage>();
         anim = GetComponent<Animator>();
+        shinyFX = GameObject.FindGameObjectWithTag("ShinyFX");
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class Item2OnGround : MonoBehaviour
     {
         if (isFPressed && other.CompareTag("Player"))
         {
+            shinyFX.SetActive(false);
             anim.SetBool("OpenChest", true);
             Destroy(gameObject, 5f);
             item.SetActive(true);

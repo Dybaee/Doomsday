@@ -15,6 +15,7 @@ TagManager:
   - walkfx
   - ftb
   - dietext
+  - ShinyFX
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - Ignore Raycast
   - SandDeformLayer
   - PostProcessing
-  - 
-  - 
+  - MainCamLayer
+  - SecondCamLayer
   - 
   - 
   - 
