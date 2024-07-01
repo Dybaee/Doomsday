@@ -271,7 +271,7 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 1f582a9b5283a5348998f316e645d157, type: 3}
   m_InitialEventName: 
-  m_InitialEventNameOverriden: 0
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_ResourceVersion: 1
@@ -1693,7 +1693,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5523161148358796291}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c5dc5162c2b6fc449a6ce86bac314c9, type: 3}
   m_Name: 
@@ -1715,7 +1715,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5523161148358796291}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f50f5082cc0279449fa4a2fa7d46bc8, type: 3}
   m_Name: 
@@ -1731,10 +1731,13 @@ MonoBehaviour:
   HP: 500
   maxHP: 500
   knockbackForce: 10
+  cameraShake: {fileID: 0}
   healthSlider: {fileID: 0}
   _setting: {fileID: 0}
   isFPressed: 0
   attackCollider: {fileID: 1104479569597241208}
+  regenAmountPerSecond: 50
+  regenDelay: 5
 --- !u!82 &868848463
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2081,7 +2084,7 @@ VisualEffect:
   m_Enabled: 1
   m_Asset: {fileID: 8926484042661614526, guid: 1f582a9b5283a5348998f316e645d157, type: 3}
   m_InitialEventName: 
-  m_InitialEventNameOverriden: 0
+  m_InitialEventNameOverriden: 1
   m_StartSeed: 0
   m_ResetSeedOnPlay: 1
   m_ResourceVersion: 1
@@ -10685,7 +10688,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5130655153926166604}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6c7a857a9d52574eaef7b76ea1d9904, type: 3}
   m_Name: 

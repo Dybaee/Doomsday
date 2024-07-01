@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QUIT : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class QUIT : MonoBehaviour
     IEnumerator CloseApplicationAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Application.Quit();
+        SceneManager.LoadScene(0);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

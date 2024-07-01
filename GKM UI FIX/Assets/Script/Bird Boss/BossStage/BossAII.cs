@@ -127,14 +127,13 @@ public class BossAII : MonoBehaviour
         isAlive = false;
         Destroy(healthUI_);
         rb.isKinematic = true;  // Disable Rigidbody physics 
-        rb.velocity = Vector3.zero; // Stop movement
-        Destroy(gameObject, 6f);
+        rb.velocity = Vector3.zero; // Stop movement        
         yield return new WaitForSeconds(5f);
+        this.gameObject.SetActive(false);
         Instantiate(BossDeathFX, transform.position, Quaternion.identity);
-        questManager.OnBossKilled();
+        questManager?.OnBossKilled();
         yield return new WaitForSeconds(2f);
-        Destroy(gameObject);
-        SceneManager.LoadScene("CSBoss");
+        SceneManager.LoadScene(7);
     }
 
     void EnableAttack()
