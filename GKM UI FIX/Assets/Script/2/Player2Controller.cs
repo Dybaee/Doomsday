@@ -43,9 +43,16 @@ public class Player2Controller : MonoBehaviour
     public bool isFPressed = false;
     public BoxCollider attackCollider;
 
+    // Knockback
     private Vector3 knockbackDirection;
     private float knockbackTimer;
     private float knockbackDuration = 0.5f; // Knockback Effect
+
+    // Regen
+    public float regenAmountPerSecond = 50f; // Amount of HP 
+    public float regenDelay = 5f; // Delay after being hit 
+    private float regenTimer = 0f;
+
 
     void Start()
     {
@@ -58,9 +65,10 @@ public class Player2Controller : MonoBehaviour
         healthSlider.maxValue = maxHP;
         healthSlider.value = HP;
         item = GetComponent<ItemOnGround>();
+
         // Subscribe ke event OnHpChanged dari HpStats
         FTB = GameObject.FindGameObjectWithTag("ftb").GetComponent<Animator>();
-        DiedText = GameObject.FindGameObjectWithTag("dietext").GetComponent<Animator>(); ;
+        DiedText = GameObject.FindGameObjectWithTag("dietext").GetComponent<Animator>(); 
     }
 
     void Update()
@@ -78,7 +86,25 @@ public class Player2Controller : MonoBehaviour
                 Move();
                 Jump();
                 Run();
+
+                // Check player is not attacking or not hit by enemies
+                if (!combatPlayer.IsAttacking && regenTimer <= 0)
+                {
+                    HP += regenAmountPerSecond * Time.deltaTime;
+                    HP = Mathf.Clamp(HP, 0f, maxHP); // Ensure HP stays within bounds
+                    UpdatePlayerHealthUI();
+                }
+                else
+                {
+                    // Start regen
+                    regenTimer -= Time.deltaTime;
+                    if (regenTimer < 0)
+                    {
+                        regenTimer = 0;
+                    }
+                }
             }
+
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 gamePaused = !gamePaused;
@@ -89,11 +115,13 @@ public class Player2Controller : MonoBehaviour
             {
                 _setting.SetActive(true);
                 Time.timeScale = 0f;
+                combatPlayer.enabled = false;
             }
             else
             {
                 _setting.SetActive(false);
                 Time.timeScale = 1f;
+                combatPlayer.enabled = true;
             }
         }
     }
@@ -191,6 +219,7 @@ public class Player2Controller : MonoBehaviour
     {
         isAlive = false;
         animator.SetTrigger("Die");
+        regenTimer = regenDelay; // Reset regen delay 
         StartCoroutine(Respawn());
     }
 
@@ -211,7 +240,9 @@ public class Player2Controller : MonoBehaviour
         {
             Die();
         }
+
         UpdatePlayerHealthUI();
+        regenTimer = regenDelay; // Reset regen delay 
 
     }
 

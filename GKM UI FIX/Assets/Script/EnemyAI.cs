@@ -76,6 +76,7 @@ public class EnemyAI : MonoBehaviour
         HP -= amount;
         if (HP <= 0)
         {
+            Destroy(healthSlider);
             Die();
             hpDrop.DropHP();
         }

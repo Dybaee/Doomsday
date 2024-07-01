@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+
+    // Variables
     [SerializeField] Transform followTarget;
     [SerializeField] float rotationSpeed = 2f;
     [SerializeField] float distance = 5;
@@ -40,7 +42,7 @@ public class CameraController : MonoBehaviour
     {
         isPause = !isPause;
 
-        // Pause the game, unlock the cursor
+        // Pause the game & unlock the cursor
         if (isPause)
         {
             Time.timeScale = 0f;
@@ -48,7 +50,7 @@ public class CameraController : MonoBehaviour
             Cursor.visible = true;
         }
 
-        // Unpause the game, lock the cursor
+        // Unpause the game & lock the cursor
         else
         {
             Time.timeScale = 1f;
@@ -74,29 +76,29 @@ public class CameraController : MonoBehaviour
         Vector3 focusPosition = followTarget.position + new Vector3(framingOffset.x, framingOffset.y, 0);
 
         // Calculate desired camera position
-        Vector3 desiredCameraPosition = focusPosition - targetRotation * Vector3.forward * distance;
+        Vector3 cullingCam = focusPosition - targetRotation * Vector3.forward * distance;
 
         // Check for collisions 
         RaycastHit hit;
-        int layerMask = 1 << LayerMask.NameToLayer("Default");  // To set camera not auto zoom when there's collider
-        if (Physics.Raycast(focusPosition, desiredCameraPosition - focusPosition, out hit, distance, layerMask))
+        int layerMask = 1 << LayerMask.NameToLayer("Default");  // To set camera not auto zoom 
+        if (Physics.Raycast(focusPosition, cullingCam - focusPosition, out hit, distance, layerMask))
         {
             // Ignore triggers
             if (hit.collider.isTrigger)
             {
                 // Set the camera to the desired position if the hit collider is a trigger
-                transform.position = desiredCameraPosition;
+                transform.position = cullingCam;
             }
             else
             {
                 // Adjust the camera position if a collision with a non-trigger collider is detected
-                transform.position = hit.point - (desiredCameraPosition - focusPosition).normalized * collisionCam;
+                transform.position = hit.point - (cullingCam - focusPosition).normalized * collisionCam;
             }
         }
         else
         {
             // Set the camera to the desired position if no collision is detected
-            transform.position = desiredCameraPosition;
+            transform.position = cullingCam;
         }
 
         // Set the camera rotation to the target rotation

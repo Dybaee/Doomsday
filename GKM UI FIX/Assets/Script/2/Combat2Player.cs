@@ -6,8 +6,8 @@ public class Combat2Player : MonoBehaviour
     public bool IsAttacking;
     public float attackCooldown = 0.5f;
     private float nextAttackTime = 0f;
-    public GameObject swordUsed;
-    public GameObject[] enemyPrefab;
+    public GameObject swordUsed; // Reference
+    public GameObject[] enemyPrefab; // Array of enemy 
     public float range = 5f;
     [SerializeField] AudioClip[] audioClips;
     AudioSource audioSource;
@@ -27,6 +27,7 @@ public class Combat2Player : MonoBehaviour
 
     void Update()
     {
+        // Check if the player is using a sword
         if (swordUsed != null)
         {
             if (!IsAttacking && Time.time >= nextAttackTime)
@@ -36,9 +37,12 @@ public class Combat2Player : MonoBehaviour
                     audioSource.clip = audioClips[0];
                     audioSource.Play();
                     PerformComboAttack();
+
+                    // Check for enemies within range
                     Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
                     foreach (var hitCollider in hitColliders)
                     {
+                        // If an enemy is detected, look at the enemy
                         if (hitCollider.gameObject != null && hitCollider.gameObject.CompareTag("Enemies"))
                         {
                             transform.LookAt(hitCollider.transform);

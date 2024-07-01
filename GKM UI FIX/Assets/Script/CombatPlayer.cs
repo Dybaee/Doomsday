@@ -35,7 +35,7 @@ public class CombatPlayer : MonoBehaviour
                 {
                     audioSource.clip = audioClips[0];
                     audioSource.Play();
-                    PerformComboAttack();
+                    ComboAttack();
                     Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
                     foreach (var hitCollider in hitColliders)
                     {
@@ -49,7 +49,7 @@ public class CombatPlayer : MonoBehaviour
                 {
                     audioSource.clip = audioClips[1];
                     audioSource.Play();
-                    PerformRightButtonAttack();
+                    RightButtonAttack();
                     Collider[] hitColliders = Physics.OverlapSphere(transform.position, range);
                     foreach (var hitCollider in hitColliders)
                     {
@@ -65,7 +65,7 @@ public class CombatPlayer : MonoBehaviour
 
     }
 
-        void PerformComboAttack()
+        void ComboAttack()
         {
         IsAttacking = true;
             string[] comboAttacks = { "Attack1", "Attack2" };
@@ -83,7 +83,7 @@ public class CombatPlayer : MonoBehaviour
             Invoke("ResetAttackFlag", attackCooldown);
         }
 
-        void PerformRightButtonAttack()
+        void RightButtonAttack()
         {
             IsAttacking = true;
             if (Time.time >= nextAttackTime)

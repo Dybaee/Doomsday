@@ -128,6 +128,7 @@ public class BossAII : MonoBehaviour
         Destroy(healthUI_);
         rb.isKinematic = true;  // Disable Rigidbody physics 
         rb.velocity = Vector3.zero; // Stop movement
+        Destroy(gameObject, 6f);
         yield return new WaitForSeconds(5f);
         Instantiate(BossDeathFX, transform.position, Quaternion.identity);
         questManager.OnBossKilled();
