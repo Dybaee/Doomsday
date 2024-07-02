@@ -8,6 +8,7 @@ public class ItemOnGround : MonoBehaviour
     public GameObject item;
     [SerializeField] Transform player;
     public bool isFPressed = false;
+    private bool inArea = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,25 +19,37 @@ public class ItemOnGround : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        // Check if the F key is pressed
-        if (Input.GetKeyDown(KeyCode.F))
+        if (inArea && Input.GetKeyDown(KeyCode.F))
         {
-            isFPressed = true;
+            ActivateItem();
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (isFPressed && other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
-            shinyFX.SetActive(false);
-            item.SetActive(true);
-            CombatPlayer combatPlayer = other.GetComponent<CombatPlayer>();
-            if (combatPlayer != null)
-            {
-                combatPlayer.UsingSword();
-            }
+            inArea = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            inArea = false;
+        }
+    }
+
+    private void ActivateItem()
+    {
+        Destroy(gameObject);
+        shinyFX.SetActive(false);
+        item.SetActive(true);
+        CombatPlayer combatPlayer = FindObjectOfType<CombatPlayer>();
+        if (combatPlayer != null)
+        {
+            combatPlayer.UsingSword();
         }
     }
 }

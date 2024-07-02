@@ -4,39 +4,78 @@ using UnityEngine;
 
 public class Item2OnGround : MonoBehaviour
 {
-    private GameObject shinyFX;
+    public GameObject interactionText;
+    public GameObject shinyFX;
     public GameObject item;
-    [SerializeField] Transform player;
-    public bool isFPressed = false;
-    Animator anim;
+    public GameObject birdBoss;
+    [SerializeField] private Transform player;
 
-    WeaponDamage weaponDamage;
+    private bool isPlayerNearby = false;
+    private bool inArea = false;
+    private Camera playerCamera;
+    private Animator anim;
+    private WeaponDamage weaponDamage;
 
-    // Start is called before the first frame update
     void Start()
     {
-        weaponDamage = GetComponent<WeaponDamage>();
+        interactionText.SetActive(false);
+        playerCamera = Camera.main;
         anim = GetComponent<Animator>();
+        weaponDamage = GetComponent<WeaponDamage>();
         shinyFX = GameObject.FindGameObjectWithTag("ShinyFX");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (isPlayerNearby)
         {
-            isFPressed = true;
+            interactionText.transform.LookAt(playerCamera.transform);
+            interactionText.transform.rotation = Quaternion.LookRotation(playerCamera.transform.forward);
+
+            if (Input.GetKeyDown(KeyCode.F) && birdBoss == null)
+            {
+                Interact();
+                Destroy(interactionText);
+            }
+        }
+
+        if (inArea && Input.GetKeyDown(KeyCode.F) && birdBoss == null)
+        {
+            ActivateItem();
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (isFPressed && other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            shinyFX.SetActive(false);
-            anim.SetBool("OpenChest", true);
-            Destroy(gameObject, 5f);
-            item.SetActive(true);
+            isPlayerNearby = true;
+            inArea = true;
+            interactionText.SetActive(true);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            isPlayerNearby = false;
+            inArea = false;
+            interactionText.SetActive(false);
+        }
+    }
+
+    private void Interact()
+    {
+        Debug.Log("ITEM COLLECTED");
+        ActivateItem();
+    }
+
+    private void ActivateItem()
+    {
+        shinyFX.SetActive(false);
+        anim.SetBool("OpenChest", true);
+        Destroy(gameObject, 5f);
+        item.SetActive(true);
     }
 }

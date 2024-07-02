@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Stage1SceneMovement : MonoBehaviour
 {
     private bool doorArea = false;
+    public GameObject swordActive;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,7 +28,7 @@ public class Stage1SceneMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && doorArea)
+        if (Input.GetKeyDown(KeyCode.F) && doorArea && swordActive.activeSelf)
         {
             SceneManager.LoadScene("CutsceneSand");
         }

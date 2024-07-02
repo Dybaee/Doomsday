@@ -7,6 +7,7 @@ public class SceneMovement : MonoBehaviour
 {
     [SerializeField] private Animator myAnimationController;
     private bool doorArea = false;
+    public GameObject crownActive;
 
     public GameObject loadingScreen;
 
@@ -14,7 +15,7 @@ public class SceneMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && doorArea)
+        if (Input.GetKeyDown(KeyCode.F) && doorArea && crownActive.activeSelf)
         {
             LoadNextLevel();
         }
