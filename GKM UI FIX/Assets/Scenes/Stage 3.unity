@@ -2389,7 +2389,7 @@ MonoBehaviour:
   _setting: {fileID: 390637892}
   isFPressed: 0
   attackCollider: {fileID: 1104479569597241208}
-  regenAmountPerSecond: 25
+  regenAmountPerSecond: 5
   regenDelay: 5
 --- !u!82 &868848463
 AudioSource:
@@ -3600,7 +3600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207585092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.510815, y: 11.24, z: -6.4}
+  m_LocalPosition: {x: -29.510815, y: 11.1, z: -6.4}
   m_LocalScale: {x: 96.12, y: 1, z: 34}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21163,7 +21163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5523161148358796291}
   m_LocalRotation: {x: -0, y: -0.6760299, z: -0, w: 0.73687416}
-  m_LocalPosition: {x: 35.551056, y: -17.678024, z: 6.6977534}
+  m_LocalPosition: {x: 35.551056, y: -17.99, z: 6.6977534}
   m_LocalScale: {x: 0.13773607, y: 0.13773605, z: 0.13773607}
   m_ConstrainProportionsScale: 0
   m_Children:

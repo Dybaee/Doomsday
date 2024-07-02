@@ -62166,7 +62166,7 @@ PrefabInstance:
     - target: {fileID: 7570024456618716728, guid: c974eea0742aca4439c018be314c1bcd,
         type: 3}
       propertyPath: regenAmountPerSecond
-      value: 25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7570024456618716730, guid: c974eea0742aca4439c018be314c1bcd,
         type: 3}
@@ -99442,6 +99442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7693613517760412383, guid: d6e3a64488fcf2a48ab1245c129ef3fe,
+        type: 3}
+      propertyPath: m_text
+      value: You Died!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6e3a64488fcf2a48ab1245c129ef3fe, type: 3}
