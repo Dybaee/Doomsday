@@ -19,6 +19,6 @@ public class videodestroyer : MonoBehaviour
     void Destroyvideo(VideoPlayer vp)
     {
         _vImage.SetActive(false);
-        SceneManager.LoadScene("Stage 1", LoadSceneMode.Single);
+        SceneManager.LoadScene("Stage 1");
     }
 }

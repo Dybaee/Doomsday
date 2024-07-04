@@ -371,7 +371,12 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Thomas Dani Artha (Main)
 
-    Miquel Jan Tanudjaja'
+    Miquel Jan Tanudjaja
+
+    Abiel Bagas Satrio
+    Jati
+
+'
 --- !u!222 &82142064
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2123,11 +2128,12 @@ MonoBehaviour:
   HP: 500
   maxHP: 500
   knockbackForce: 10
-  cameraShake: {fileID: 0}
   healthSlider: {fileID: 0}
   _setting: {fileID: 0}
   isFPressed: 0
   attackCollider: {fileID: 1104479569597241208}
+  vCam: {fileID: 0}
+  camShake: {fileID: 0}
   regenAmountPerSecond: 50
   regenDelay: 5
 --- !u!82 &868848463
