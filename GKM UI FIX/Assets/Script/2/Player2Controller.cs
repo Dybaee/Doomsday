@@ -57,6 +57,12 @@ public class Player2Controller : MonoBehaviour
     private float regenTimer = 0f;
 
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     void Start()
     {
         WalkFX = GameObject.FindGameObjectWithTag("walkfx").GetComponent<ParticleSystem>();
@@ -120,12 +126,16 @@ public class Player2Controller : MonoBehaviour
                 _setting.SetActive(true);
                 Time.timeScale = 0f;
                 combatPlayer.enabled = false;
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
             else
             {
                 _setting.SetActive(false);
                 Time.timeScale = 1f;
                 combatPlayer.enabled = true;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
     }

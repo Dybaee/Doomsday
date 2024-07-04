@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         playerCombat = GetComponent<PlayerCombat>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Start()
@@ -76,11 +78,15 @@ public class PlayerController : MonoBehaviour
         {
             _setting.SetActive(true);
             Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else
         {
             _setting.SetActive(false);
             Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
