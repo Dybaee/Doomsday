@@ -33,7 +33,7 @@ public class SaveSystem : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No save file found.");
+            Debug.LogWarning("No save file.");
         }
     }
 }

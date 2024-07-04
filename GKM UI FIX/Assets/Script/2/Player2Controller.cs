@@ -7,6 +7,8 @@ using static System.Net.WebRequestMethods;
 
 public class Player2Controller : MonoBehaviour
 {
+    // Variables
+
     public CharacterController controller;
     public Transform cam;
     public Animator animator;
