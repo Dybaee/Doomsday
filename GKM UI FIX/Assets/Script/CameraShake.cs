@@ -7,6 +7,20 @@ public class CameraShake : MonoBehaviour
 {
     public float duration;
     public float magnitude;
+    private Player2Controller player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player2Controller>();
+    }
+
+    private void Update()
+    {
+        if (player.knockbackTimer > 0)
+        {
+            StartCoroutine(Shake());
+        }
+    }
 
     public IEnumerator Shake()
     {

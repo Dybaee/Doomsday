@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +23,6 @@ public class Player2Controller : MonoBehaviour
     public float HP;
     public float maxHP = 500;
     public float knockbackForce = 10f;
-    public CameraShake cameraShake;
 
     private float movementSpeed;
     private bool isRunning;
@@ -45,6 +45,8 @@ public class Player2Controller : MonoBehaviour
     ItemOnGround item;
     public bool isFPressed = false;
     public BoxCollider attackCollider;
+    public CinemachineShake vCam;
+    public CameraShake camShake;
 
     // Knockback
     private Vector3 knockbackDirection;
@@ -87,7 +89,7 @@ public class Player2Controller : MonoBehaviour
             if (knockbackTimer > 0)
             {
                 // Apply knockback
-                StartCoroutine(cameraShake.Shake());
+                StartCoroutine(vCam.Shake());
                 knockbackTimer -= Time.deltaTime;
                 controller.Move(knockbackDirection * knockbackForce * Time.deltaTime);
             }
