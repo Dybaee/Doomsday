@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8713574387224218568
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
-  m_Name: AudioPlayableAsset
-  m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: 542f092b0e8759e4ebad374abfa85cfd, type: 3}
-  m_Loop: 0
-  m_bufferingTime: 0.1
-  m_ClipProperties:
-    volume: 0.3
 --- !u!114 &-8046751169201068976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -965,9 +948,9 @@ MonoBehaviour:
     m_DisplayName: Everything has change
   - m_Version: 1
     m_Start: 12.921428571428573
-    m_ClipIn: 1.3952380952380938
-    m_Asset: {fileID: -8713574387224218568}
-    m_Duration: 3.9999999999999982
+    m_ClipIn: 0.6833333333333336
+    m_Asset: {fileID: 6142823163285271075}
+    m_Duration: 4.724013605442177
     m_TimeScale: 1
     m_ParentTrack: {fileID: -850803898685408349}
     m_EaseInDuration: 0
@@ -1031,7 +1014,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Castro was die
+    m_DisplayName: WhatsApp-Audio-2024-07-06-at-19.13.24_23d903bd.dat
   m_Markers:
     m_Objects: []
   m_TrackProperties:
@@ -1445,6 +1428,23 @@ MonoBehaviour:
   m_Loop: 2
   m_Version: 1
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+--- !u!114 &6142823163285271075
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f10dd60657c6004587f237a7e90f8e4, type: 3}
+  m_Name: AudioPlayableAsset
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 8300000, guid: b9d0b56397acb07459e4d2729b78b4fa, type: 3}
+  m_Loop: 0
+  m_bufferingTime: 0.1
+  m_ClipProperties:
+    volume: 1
 --- !u!114 &7227242433053832484
 MonoBehaviour:
   m_ObjectHideFlags: 1
