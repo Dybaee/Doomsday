@@ -63050,6 +63050,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1405790741}
     m_Modifications:
+    - target: {fileID: 3097336069011021120, guid: c974eea0742aca4439c018be314c1bcd,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.08587105
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097336069011021120, guid: c974eea0742aca4439c018be314c1bcd,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.26706794
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097336069011021120, guid: c974eea0742aca4439c018be314c1bcd,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.08683035
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097336069011021120, guid: c974eea0742aca4439c018be314c1bcd,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.0008339251
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097336069011021120, guid: c974eea0742aca4439c018be314c1bcd,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.16853584
+      objectReference: {fileID: 0}
+    - target: {fileID: 3097336069011021120, guid: c974eea0742aca4439c018be314c1bcd,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.006809362
+      objectReference: {fileID: 0}
     - target: {fileID: 7081331582093980801, guid: c974eea0742aca4439c018be314c1bcd,
         type: 3}
       propertyPath: m_RootOrder
