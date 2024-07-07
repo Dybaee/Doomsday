@@ -25,7 +25,7 @@ public class BossAII : MonoBehaviour
     public float Attacktimer = 10f;
     public float knockbackForce = 10f;
     bool isKnockback = false;
-
+    private Animator FTB;
     private BossQuest questManager;
     [SerializeField] GameObject BossDeathFX;
     [SerializeField] GameObject healthUI_;
@@ -42,7 +42,7 @@ public class BossAII : MonoBehaviour
         healthSlider.maxValue = health;
         healthSlider.value = currentHealth;
         questManager = FindObjectOfType<BossQuest>();
-        
+        FTB = GameObject.FindGameObjectWithTag("ftb").GetComponent<Animator>();
     }
 
     void Update()
@@ -133,6 +133,7 @@ public class BossAII : MonoBehaviour
         Destroy(this.gameObject);
         Instantiate(BossDeathFX, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2f);
+        //FTB.Play("FadeToBlack");
         SceneManager.LoadSceneAsync(sceneName);
     }
 
