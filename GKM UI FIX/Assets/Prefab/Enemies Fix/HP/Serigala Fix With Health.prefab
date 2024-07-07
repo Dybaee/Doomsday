@@ -317,7 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1cf5ce2a2d04ed44a814184652f1726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hpModel: {fileID: 0}
+  hpModel: {fileID: 2278469919279483276, guid: 765703071687f6f449f53ee00e0e9d4a, type: 3}
   health: 100
 --- !u!114 &764491676341992870
 MonoBehaviour:
@@ -339,8 +339,8 @@ MonoBehaviour:
     m_Bits: 64
   SmokeDeathFX: {fileID: 2622825226192774075, guid: 4f0bf47d63a251545ac4445908a6390b,
     type: 3}
-  HP: 125
-  maxHP: 125
+  HP: 25
+  maxHP: 25
   healthSlider: {fileID: 4671541642393402659}
   enemyDamage: 13
 --- !u!1 &636916749863647074
@@ -1646,7 +1646,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5696, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
