@@ -1960,7 +1960,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568078638}
-  m_LocalRotation: {x: -0.08504484, y: -0.7035958, z: -0.085445136, w: 0.70029956}
+  m_LocalRotation: {x: -0.08504484, y: -0.7035958, z: -0.08544514, w: 0.70029956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2276,6 +2276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c371f9c46ea3864ead0b16e9e244f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneIndex: 1
+  bossQuest: {fileID: 2083814274}
 --- !u!114 &626308673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6822,7 +6824,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068048567}
-  m_LocalRotation: {x: -0.05955038, y: -0.7062353, z: -0.059830673, w: 0.70292664}
+  m_LocalRotation: {x: -0.059550364, y: -0.7062353, z: -0.059830662, w: 0.70292664}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6876,6 +6878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questStatusText: {fileID: 340201246}
+  isBossKilled: 0
 --- !u!1 &2118283548
 GameObject:
   m_ObjectHideFlags: 0
@@ -10158,7 +10161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf99ef0f5089ffd4eacc76cd2f0bc90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 1000
   addDamage: 13
   itemCrown: {fileID: 4991757461302580334}
 --- !u!1 &1104479569597241211
@@ -21742,7 +21745,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5130655153926166604}
-  m_LocalRotation: {x: -0.08504484, y: -0.7035958, z: -0.08544515, w: 0.70029956}
+  m_LocalRotation: {x: -0.085044846, y: -0.7035958, z: -0.08544515, w: 0.70029956}
   m_LocalPosition: {x: 40.421963, y: -17.859821, z: 6.7364993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

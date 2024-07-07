@@ -10,7 +10,7 @@ public class BossQuest : MonoBehaviour
 
 
 
-    private bool isBossKilled = false;
+    public bool isBossKilled = false;
 
     void Start()
     {
