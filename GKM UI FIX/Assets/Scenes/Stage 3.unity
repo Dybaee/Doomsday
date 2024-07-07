@@ -767,7 +767,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0
+    Value: 0.5
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -840,7 +840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200561273}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.818872, y: 11.558023, z: -6.2804894}
+  m_LocalPosition: {x: 22.538887, y: 14.058023, z: -6.288846}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1960,7 +1960,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 568078638}
-  m_LocalRotation: {x: -0.08504484, y: -0.7035958, z: -0.08544514, w: 0.70029956}
+  m_LocalRotation: {x: 0.021618979, y: -0.7080871, z: 0.021699471, w: 0.7054605}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2276,8 +2276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c371f9c46ea3864ead0b16e9e244f09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 1
-  bossQuest: {fileID: 2083814274}
 --- !u!114 &626308673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3146,7 +3144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0, z: -10.78}
+  m_FollowOffset: {x: 0, y: 2.5, z: -8.5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3631,7 +3629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0, z: -10.78}
+  m_FollowOffset: {x: 0, y: 2.5, z: -8.5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3776,7 +3774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0, z: -10.78}
+  m_FollowOffset: {x: 0, y: 2.5, z: -8.5}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -5933,7 +5931,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775299947}
-  m_LocalRotation: {x: -0.07232639, y: -0.7050301, z: -0.072666824, w: 0.70172715}
+  m_LocalRotation: {x: 0.0344135, y: -0.7075769, z: 0.034541633, w: 0.7049522}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6824,7 +6822,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068048567}
-  m_LocalRotation: {x: -0.059550364, y: -0.7062353, z: -0.059830662, w: 0.70292664}
+  m_LocalRotation: {x: 0.047230523, y: -0.7068316, z: 0.047406383, w: 0.70420957}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12843,6 +12841,7 @@ MonoBehaviour:
     type: 3}
   healthUI_: {fileID: 137242582}
   healthSlider: {fileID: 333677161}
+  sceneName: CSBoss
 --- !u!1 &2076850630570308560
 GameObject:
   m_ObjectHideFlags: 0
@@ -21745,8 +21744,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5130655153926166604}
-  m_LocalRotation: {x: -0.085044846, y: -0.7035958, z: -0.08544515, w: 0.70029956}
-  m_LocalPosition: {x: 40.421963, y: -17.859821, z: 6.7364993}
+  m_LocalRotation: {x: 0.0344135, y: -0.7075768, z: 0.034541626, w: 0.70495224}
+  m_LocalPosition: {x: 40.498615, y: -15.477016, z: 6.7291756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

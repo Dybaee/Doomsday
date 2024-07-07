@@ -31,6 +31,8 @@ public class BossAII : MonoBehaviour
     [SerializeField] GameObject healthUI_;
     public Slider healthSlider;
 
+    public string sceneName;
+
     void Start()
     {
         ChangeState(new BossIdleState(this));
@@ -129,7 +131,9 @@ public class BossAII : MonoBehaviour
         questManager?.OnBossKilled();
         yield return new WaitForSeconds(5f);
         Destroy(this.gameObject);
-        Instantiate(BossDeathFX, transform.position, Quaternion.identity);        
+        Instantiate(BossDeathFX, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadSceneAsync(sceneName);
     }
 
     void EnableAttack()
