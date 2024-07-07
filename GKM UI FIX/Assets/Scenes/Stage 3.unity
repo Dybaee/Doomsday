@@ -6822,7 +6822,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2068048567}
-  m_LocalRotation: {x: 0.047230523, y: -0.7068316, z: 0.047406383, w: 0.70420957}
+  m_LocalRotation: {x: 0.047230534, y: -0.7068315, z: 0.047406383, w: 0.7042096}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10159,7 +10159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf99ef0f5089ffd4eacc76cd2f0bc90c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1000
+  damage: 10
   addDamage: 13
   itemCrown: {fileID: 4991757461302580334}
 --- !u!1 &1104479569597241211
