@@ -24,7 +24,11 @@ public class FInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F))
             {
                 Interact();
-                Destroy(interactionText);
+                if (interactionText != null)
+                {
+                    Destroy(interactionText);
+                    Debug.Log("Interaction Destroyed");
+                }
             }
         }
     }

@@ -1077,7 +1077,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200594270}
-  m_LocalRotation: {x: -0.046523113, y: 0.000000017187757, z: 8.004947e-10, w: 0.9989172}
+  m_LocalRotation: {x: -0.046523094, y: -0.000000017187746, z: -8.0049384e-10, w: 0.9989172}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12049,7 +12049,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773325934}
-  m_LocalRotation: {x: -0.082778014, y: 0.0000000042868327, z: 3.5607756e-10, w: 0.996568}
+  m_LocalRotation: {x: -0.082778014, y: -0.000000004286832, z: -3.5607747e-10, w: 0.996568}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -63152,6 +63152,11 @@ PrefabInstance:
       objectReference: {fileID: 1137891481}
     - target: {fileID: 7570024456618716728, guid: c974eea0742aca4439c018be314c1bcd,
         type: 3}
+      propertyPath: runSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7570024456618716728, guid: c974eea0742aca4439c018be314c1bcd,
+        type: 3}
       propertyPath: cameraShake
       value: 
       objectReference: {fileID: 346138207}
@@ -96983,6 +96988,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559911896300314157, guid: ef9bdbfc3eeef524981deab990c63cf8,
+        type: 3}
+      propertyPath: m_text
+      value: Now Loading
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9bdbfc3eeef524981deab990c63cf8, type: 3}

@@ -193,7 +193,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F) && interactionArea != null && Vector3.Distance(transform.position, interactionArea.position) <= interactionDistance)
         {
             animator.SetTrigger("Taking");
-            Debug.Log("ITEM COLLECTED");
         }
     }
 

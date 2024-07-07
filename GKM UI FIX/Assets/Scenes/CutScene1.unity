@@ -180,7 +180,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: b6d6f11cfca914046a579312d088464f, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 2
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 3418445050770131325, guid: b6d6f11cfca914046a579312d088464f, type: 2}
@@ -197,6 +197,8 @@ PlayableDirector:
     value: {fileID: 1932002464}
   - key: {fileID: -1082517059345640770, guid: b6d6f11cfca914046a579312d088464f, type: 2}
     value: {fileID: 861785571}
+  - key: {fileID: -850803898685408349, guid: b6d6f11cfca914046a579312d088464f, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &379914620
@@ -613,7 +615,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -882,7 +884,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1273,7 +1275,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

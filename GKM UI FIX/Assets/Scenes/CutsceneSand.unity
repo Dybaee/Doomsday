@@ -24279,7 +24279,7 @@ PrefabInstance:
     - target: {fileID: 2330445602054406402, guid: cd90d9ccc603d1940ac219a9766bd3b2,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 16777215
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2330445602054406412, guid: cd90d9ccc603d1940ac219a9766bd3b2,
         type: 3}
@@ -26041,7 +26041,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: 85897ddcf69ed11468864aca2191ca35, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 2
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -1217498465139364323, guid: 85897ddcf69ed11468864aca2191ca35, type: 2}
@@ -26080,6 +26080,8 @@ PlayableDirector:
     value: {fileID: 1365394668}
   - key: {fileID: 2513122992477866612, guid: 85897ddcf69ed11468864aca2191ca35, type: 2}
     value: {fileID: 842507475}
+  - key: {fileID: -5674273311079480499, guid: 85897ddcf69ed11468864aca2191ca35, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - fd49d053a2a145f45934ad984b0084ef: {fileID: 0}

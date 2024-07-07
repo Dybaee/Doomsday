@@ -518,7 +518,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -746,7 +746,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2351,7 +2351,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: 9c3523ae0dc72c44c89aba32d47bd032, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 2
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 6334115922797297732, guid: 9c3523ae0dc72c44c89aba32d47bd032, type: 2}
@@ -2379,6 +2379,8 @@ PlayableDirector:
   - key: {fileID: -2938077180993987168, guid: 9c3523ae0dc72c44c89aba32d47bd032, type: 2}
     value: {fileID: 375234495}
   - key: {fileID: 7194755255343284010, guid: 9c3523ae0dc72c44c89aba32d47bd032, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1762635399638154233, guid: 9c3523ae0dc72c44c89aba32d47bd032, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References:
@@ -3596,7 +3598,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5164,18 +5166,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Rumah Makan Milik Kita
+  m_Text: 'Discord
 
-    Ayam Gajebo
+    Github
 
-    Warmindo Yudis
-
-    Kos Bu
-    Bekti
-
-    Discord
-
-    Github'
+    Youtube'
 --- !u!222 &1997390215
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15257,7 +15252,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

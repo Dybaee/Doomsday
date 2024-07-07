@@ -4,24 +4,39 @@ using UnityEngine;
 
 public class ItemOnGround : MonoBehaviour
 {
-    private GameObject shinyFX;
     public GameObject item;
     [SerializeField] Transform player;
-    public bool isFPressed = false;
+    public GameObject interactionText;
+    private GameObject shinyFX;
     private bool inArea = false;
+    private bool isPlayerNearby = false;
+    private Camera playerCamera;
 
     // Start is called before the first frame update
     void Start()
     {
         shinyFX = GameObject.FindGameObjectWithTag("ShinyFX");
+        interactionText.SetActive(false);
+        playerCamera = Camera.main;
     }
 
     // Update is called once per frame
-    private void Update()
+    void Update()
     {
-        if (inArea && Input.GetKeyDown(KeyCode.F))
+        if (isPlayerNearby)
         {
-            ActivateItem();
+            interactionText.transform.LookAt(playerCamera.transform);
+            interactionText.transform.rotation = Quaternion.LookRotation(playerCamera.transform.forward);
+
+            if (inArea && Input.GetKeyDown(KeyCode.F))
+            {
+                ActivateItem();
+                if (interactionText != null)
+                {
+                    Destroy(interactionText);
+                    Debug.Log("Interaction Destroyed");
+                }
+            }
         }
     }
 
@@ -30,6 +45,8 @@ public class ItemOnGround : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inArea = true;
+            isPlayerNearby = true;
+            interactionText.SetActive(true);
         }
     }
 
@@ -38,6 +55,8 @@ public class ItemOnGround : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             inArea = false;
+            isPlayerNearby = false;
+            interactionText.SetActive(false);
         }
     }
 
@@ -51,5 +70,6 @@ public class ItemOnGround : MonoBehaviour
         {
             combatPlayer.UsingSword();
         }
+        Debug.Log("ITEM COLLECTED");
     }
 }

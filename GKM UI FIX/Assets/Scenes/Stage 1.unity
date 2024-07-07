@@ -397,7 +397,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73510866}
-  m_LocalRotation: {x: 0.011643686, y: -0.00009003029, z: 0.0000010483554, w: 0.9999322}
+  m_LocalRotation: {x: 0.0116436845, y: -0.00009003085, z: 0.0000010483618, w: 0.9999322}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -727,7 +727,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184987000}
-  m_LocalRotation: {x: -0.024306899, y: -0.00009001196, z: -0.0000021885583, w: 0.9997046}
+  m_LocalRotation: {x: -0.024306899, y: -0.00009000766, z: -0.0000021884537, w: 0.9997046}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2717,7 +2717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Now Laoding
+  m_text: Now Loading
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5a9fdc34f2db5f942a444c44f04c66dd, type: 2}
   m_sharedMaterial: {fileID: 6105478341982417708, guid: 5a9fdc34f2db5f942a444c44f04c66dd,
@@ -6292,6 +6292,11 @@ PrefabInstance:
       objectReference: {fileID: 5738886166094682554}
     - target: {fileID: 6238146246085993389, guid: e3fc7fcde95f342419eb63c269315af7,
         type: 3}
+      propertyPath: runSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6238146246085993389, guid: e3fc7fcde95f342419eb63c269315af7,
+        type: 3}
       propertyPath: _healthbar
       value: 
       objectReference: {fileID: 7747079553272496128}
@@ -8345,6 +8350,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: F Press
+      objectReference: {fileID: 0}
+    - target: {fileID: 3517600097700118454, guid: 69ff1d15789d9cc4f90037c27c068c28,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ff1d15789d9cc4f90037c27c068c28, type: 3}
@@ -12510,6 +12520,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2981945489619373261, guid: 5ec4452ce1ccb7648bf74605f99cbedd,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981945489619373261, guid: 5ec4452ce1ccb7648bf74605f99cbedd,
+        type: 3}
       propertyPath: interactionText
       value: 
       objectReference: {fileID: 434794288}
@@ -12523,6 +12538,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 5183050954829063048}
+    - target: {fileID: 2981945489619373262, guid: 5ec4452ce1ccb7648bf74605f99cbedd,
+        type: 3}
+      propertyPath: interactionText
+      value: 
+      objectReference: {fileID: 434794288}
     - target: {fileID: 4437634918905936463, guid: 5ec4452ce1ccb7648bf74605f99cbedd,
         type: 3}
       propertyPath: m_RootOrder
