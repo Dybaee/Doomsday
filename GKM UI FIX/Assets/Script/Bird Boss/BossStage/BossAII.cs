@@ -124,12 +124,12 @@ public class BossAII : MonoBehaviour
         isAlive = false;
         Destroy(healthUI_);
         rb.isKinematic = true;  // Disable Rigidbody physics 
-        rb.velocity = Vector3.zero; // Stop movement        
-        yield return new WaitForSeconds(5f);
-        Destroy(this.gameObject, 3f);
-        Instantiate(BossDeathFX, transform.position, Quaternion.identity);
+        rb.velocity = Vector3.zero; // Stop movement
+        yield return new WaitForSeconds(1f);
         questManager?.OnBossKilled();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(5f);
+        Destroy(this.gameObject);
+        Instantiate(BossDeathFX, transform.position, Quaternion.identity);        
     }
 
     void EnableAttack()
@@ -177,7 +177,7 @@ public class BossAII : MonoBehaviour
     {
         health -= damage;
         currentHealth = health;
-        if (health <= 0)
+        if (health <= 0 )
         {
             Defeated();
         }
