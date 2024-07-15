@@ -129,12 +129,11 @@ public class BossAII : MonoBehaviour
         rb.velocity = Vector3.zero; // Stop movement
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
         questManager?.OnBossKilled();
-        yield return new WaitForSeconds(5f);
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
         Instantiate(BossDeathFX, transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         //FTB.Play("FadeToBlack");
-        SceneManager.LoadSceneAsync(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 
     void EnableAttack()

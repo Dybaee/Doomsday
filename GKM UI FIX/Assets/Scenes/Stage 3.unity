@@ -672,7 +672,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 194498952}
-  - component: {fileID: 194498953}
   m_Layer: 0
   m_Name: EndingManager
   m_TagString: Untagged
@@ -695,21 +694,6 @@ Transform:
   m_Father: {fileID: 758771304}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &194498953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 194498951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b91aafba5c673d46b96ee85757ac7e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  boss: {fileID: 1693922222514009280}
-  delay: 3
-  sceneName: CSBoss
 --- !u!1 &200561273
 GameObject:
   m_ObjectHideFlags: 0
@@ -5931,7 +5915,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775299947}
-  m_LocalRotation: {x: 0.0344135, y: -0.70757693, z: 0.034541637, w: 0.7049521}
+  m_LocalRotation: {x: 0.0344135, y: -0.7075769, z: 0.034541633, w: 0.7049522}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21745,7 +21729,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5130655153926166604}
-  m_LocalRotation: {x: 0.034413498, y: -0.70757693, z: 0.034541633, w: 0.7049521}
+  m_LocalRotation: {x: 0.0344135, y: -0.7075768, z: 0.034541626, w: 0.70495224}
   m_LocalPosition: {x: 40.498615, y: -15.477016, z: 6.7291756}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
