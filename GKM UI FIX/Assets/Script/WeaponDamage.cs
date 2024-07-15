@@ -7,10 +7,9 @@ using UnityEngine.UI;
 public class WeaponDamage : MonoBehaviour
 {
     public float damage;
-
     public float addDamage = 7f;
-
     public GameObject itemCrown;
+    public bool cheatMode = false; // Add this line
 
     BoxCollider triggerBox;
     EnemyAI enemy;
@@ -25,12 +24,24 @@ public class WeaponDamage : MonoBehaviour
         bossAII = GetComponent<BossAII>();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P)) // 
+        {
+            cheatMode = !cheatMode;
+            Debug.Log("Cheat mode: " + (cheatMode ? "ON" : "OFF"));
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-
         float totalDamage = damage;
 
-        if (itemCrown != null && itemCrown.activeInHierarchy)
+        if (cheatMode)
+        {
+            totalDamage = float.MaxValue; // One hit
+        }
+        else if (itemCrown != null && itemCrown.activeInHierarchy)
         {
             totalDamage += addDamage;
         }
@@ -48,22 +59,17 @@ public class WeaponDamage : MonoBehaviour
         {
             Debug.Log("Bird Get Hit");
             bird.TakeDamage(totalDamage);
-            
             return;
         }
-
         else
         {
             var boss = other.gameObject.GetComponent<BossAI>();
+            if (boss != null)
             {
-                if (boss != null)
-                {
-                    Debug.Log("Boss get Hit");
-                    boss.TakeDamage(totalDamage);
-                    return;
-                }
+                Debug.Log("Boss get Hit");
+                boss.TakeDamage(totalDamage);
+                return;
             }
         }
-        
     }
 }

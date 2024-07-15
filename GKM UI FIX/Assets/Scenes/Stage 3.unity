@@ -10162,6 +10162,7 @@ MonoBehaviour:
   damage: 10
   addDamage: 13
   itemCrown: {fileID: 4991757461302580334}
+  cheatMode: 0
 --- !u!1 &1104479569597241211
 GameObject:
   m_ObjectHideFlags: 0
