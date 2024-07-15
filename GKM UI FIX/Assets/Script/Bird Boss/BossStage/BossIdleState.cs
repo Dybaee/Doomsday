@@ -6,6 +6,7 @@ public class BossIdleState : BossState
 {
     public BossIdleState(BossAII boss) : base(boss) { }
 
+
     public override void Enter()
     {
         boss.anim.SetFloat("MovementSpeed", 0);

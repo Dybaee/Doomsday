@@ -31,7 +31,7 @@ public class BossAII : MonoBehaviour
     [SerializeField] GameObject healthUI_;
     public Slider healthSlider;
 
-    public string sceneName;
+    //public string sceneName;
 
     void Start()
     {
@@ -129,11 +129,11 @@ public class BossAII : MonoBehaviour
         rb.velocity = Vector3.zero; // Stop movement
         yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
         questManager?.OnBossKilled();
-        //Destroy(this.gameObject);
-        Instantiate(BossDeathFX, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(3f);
+        Destroy(this.gameObject);
+        Instantiate(BossDeathFX, transform.position, Quaternion.identity);
         //FTB.Play("FadeToBlack");
-        SceneManager.LoadScene(sceneName);
+        //SceneManager.LoadScene(sceneName);
     }
 
     void EnableAttack()
