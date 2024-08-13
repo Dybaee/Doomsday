@@ -7,15 +7,16 @@ public class SceneMovement : MonoBehaviour
 {
     [SerializeField] private Animator myAnimationController;
     private bool doorArea = false;
-    public GameObject crownActive;
+    
 
     public GameObject loadingScreen;
+    public GameObject miniboss;
 
     public float transitionTime = 1f;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && doorArea && crownActive.activeSelf)
+        if (Input.GetKeyDown(KeyCode.F) && doorArea && miniboss == null)
         {
             LoadNextLevel();
         }
@@ -54,3 +55,4 @@ public class SceneMovement : MonoBehaviour
         SceneManager.LoadScene(levelIndex);
     }
 }
+

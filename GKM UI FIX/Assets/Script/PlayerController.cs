@@ -63,7 +63,6 @@ public class PlayerController : MonoBehaviour
         if (isAlive)
         {
             Move();
-            Jump();
             Run();
             TakingItem();
         }
@@ -100,7 +99,14 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        // Check if there's movement
+        // Apply gravity
+        if (controller.isGrounded)
+        {
+            velocity.y = 0f; 
+        }
+
+        
+
         if (direction.magnitude >= velocityThreshold)
         {
             // Calculate angle rotation
@@ -108,10 +114,9 @@ public class PlayerController : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-
             // Calculate movement direction
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * walkSpeed * (isRunning ? runSpeed : 1) * Time.deltaTime);
+            controller.Move((moveDir.normalized * walkSpeed * (isRunning ? runSpeed : 1) + velocity) * Time.deltaTime);
 
             // Set animation
             float speed = isRunning ? 1.5f : 0.5f; // Default to walking
@@ -127,29 +132,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            controller.Move(velocity * Time.deltaTime); // Ensure gravity is applied even when not moving
             animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime); // idle
         }
-    }
-
-    void Jump()
-    {
-        if (!isAlive)
-            return;
-
-        if (controller.isGrounded && !isJumping && Input.GetKeyDown(KeyCode.Space))
-        {
-            isJumping = true;
-            animator.SetBool("IsJumping", true);
-            velocity.y = Mathf.Sqrt(2f * jumpForce * gravity); // Calculate jump velocity
-        }
-        else
-        {
-            isJumping = false;
-            animator.SetBool("IsJumping", false);
-            velocity.y -= gravity * Time.deltaTime;
-            isJumping = false;
-        }
-        controller.Move(velocity * Time.deltaTime); // Apply movement
     }
 
     void Run()
