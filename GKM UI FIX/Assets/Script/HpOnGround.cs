@@ -7,13 +7,13 @@ public class HpOnGround : MonoBehaviour
     public GameObject hpModel;
     public float health = 100f;
 
-    PlayerController pcontroller;
+    Player2Controller pcontroller;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        pcontroller = GetComponent<PlayerController>();
+        pcontroller = GetComponent<Player2Controller>();
     }
 
     // Update is called once per frame

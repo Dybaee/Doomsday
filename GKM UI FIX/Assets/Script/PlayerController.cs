@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private float turnSmoothVelocity;
     private Vector3 velocity;
+    private ParticleSystem WalkFX;
 
     public Transform interactionArea;
     public float interactionDistance = 2f;
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        WalkFX = GameObject.FindGameObjectWithTag("walkfx").GetComponent<ParticleSystem>();
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         combatPlayer = GetComponent<CombatPlayer>();
@@ -63,7 +65,6 @@ public class PlayerController : MonoBehaviour
         if (isAlive)
         {
             Move();
-            Jump();
             Run();
             TakingItem();
         }
@@ -100,56 +101,56 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-        // Check if there's movement
-        if (direction.magnitude >= velocityThreshold)
+        if (controller.isGrounded) // Check if player is grounded
         {
-            // Calculate angle rotation
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            velocity.y = -9.8f;
 
-
-            // Calculate movement direction
-            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * walkSpeed * (isRunning ? runSpeed : 1) * Time.deltaTime);
-
-            // Set animation
-            float speed = isRunning ? 1.5f : 0.5f; // Default to walking
-            if (isRunning && direction.magnitude >= 1f)
+            // Check if there's movement
+            if (direction.magnitude >= velocityThreshold)
             {
-                speed = 1.5f; // Running
+                // Calculate angle rotation
+                float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+                float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+                // Calculate movement direction
+                Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                controller.Move(moveDir.normalized * walkSpeed * (isRunning ? runSpeed : 1) * Time.deltaTime);
+
+                // Set animation
+                float speed = isRunning ? 1.5f : 0.5f; // Default to walking
+                if (isRunning && direction.magnitude >= 1f)
+                {
+                    speed = 1.5f; // Running
+                }
+                else if (!isRunning && direction.magnitude >= 0.5f)
+                {
+                    speed = 0.5f; // Walking
+                }
+                animator.SetFloat("Speed", speed, 0.1f, Time.deltaTime);
+
+                // Walk FX
+
+                if (WalkFX == null) { return; }
+                if (WalkFX.isStopped)
+                {
+                    WalkFX.Play();
+                }
+
             }
-            else if (!isRunning && direction.magnitude >= 0.5f)
+            else
             {
-                speed = 0.5f; // Walking
+                animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime); // idle
+
+                if (WalkFX == null) { return; }
+                WalkFX.Stop();
             }
-            animator.SetFloat("Speed", speed, 0.1f, Time.deltaTime);
         }
         else
         {
-            animator.SetFloat("Speed", 0f, 0.1f, Time.deltaTime); // idle
+            velocity.y -= gravity * Time.deltaTime; // Apply gravity when not grounded
+            controller.Move(velocity * Time.deltaTime); // Move player downwards
         }
-    }
-
-    void Jump()
-    {
-        if (!isAlive)
-            return;
-
-        if (controller.isGrounded && !isJumping && Input.GetKeyDown(KeyCode.Space))
-        {
-            isJumping = true;
-            animator.SetBool("IsJumping", true);
-            velocity.y = Mathf.Sqrt(2f * jumpForce * gravity); // Calculate jump velocity
-        }
-        else
-        {
-            isJumping = false;
-            animator.SetBool("IsJumping", false);
-            velocity.y -= gravity * Time.deltaTime;
-            isJumping = false;
-        }
-        controller.Move(velocity * Time.deltaTime); // Apply movement
     }
 
     void Run()

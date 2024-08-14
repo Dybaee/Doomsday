@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SaveSystem : MonoBehaviour
 {
-
     private string saveFileName = "savegame.json";
 
     public void SaveGame()
@@ -33,8 +33,33 @@ public class SaveSystem : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("No save file.");
+            Debug.LogWarning("No save file");
         }
+    }
+
+    public void DeleteSaveFile()
+    {
+        string filePath = Path.Combine(Application.persistentDataPath, saveFileName);
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+            Debug.Log("Save file deleted");
+        }
+        else
+        {
+            Debug.Log("No save file to delete");
+        }
+    }
+
+    public void NewGame()
+    {
+        DeleteSaveFile();
+        SceneManager.LoadScene(1); 
+    }
+
+    public void ChangeScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }
 
