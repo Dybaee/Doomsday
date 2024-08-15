@@ -35,7 +35,7 @@ public class Stage1SceneMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && doorArea && swordActive.activeSelf)
         {
-            StartCoroutine(LoadLevel("CutsceneSand"));
+            StartCoroutine(LoadLevel("CS2"));
         }
     }
 

@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 379914622}
   - component: {fileID: 379914621}
   - component: {fileID: 379914620}
-  - component: {fileID: 379914619}
+  - component: {fileID: 379914623}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -168,37 +168,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!320 &379914619
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379914617}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 2
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 3418445050770131325, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1133785741}
-  - key: {fileID: 168484576771120791, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1950833962}
-  - key: {fileID: -5188760386194950902, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1133180556}
-  - key: {fileID: 2592531340753255937, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1075012329}
-  - key: {fileID: -1637397736725374392, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1503877042}
-  - key: {fileID: -2052917457141206142, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1932002464}
-  - key: {fileID: -1082517059345640770, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 861785571}
-  m_ExposedReferences:
-    m_References: []
 --- !u!114 &379914620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +229,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!320 &379914623
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379914617}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: bd9c8165749ea024e993a4e54afc46c8, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 8481723511772770444, guid: bd9c8165749ea024e993a4e54afc46c8, type: 2}
+    value: {fileID: 1950833962}
+  - key: {fileID: -2432309292823804849, guid: bd9c8165749ea024e993a4e54afc46c8, type: 2}
+    value: {fileID: 1133180556}
+  - key: {fileID: -7387357641649407940, guid: bd9c8165749ea024e993a4e54afc46c8, type: 2}
+    value: {fileID: 1075012329}
+  - key: {fileID: -2981293138464429364, guid: bd9c8165749ea024e993a4e54afc46c8, type: 2}
+    value: {fileID: 1503877042}
+  - key: {fileID: 8220657919176958241, guid: bd9c8165749ea024e993a4e54afc46c8, type: 2}
+    value: {fileID: 1932002464}
+  - key: {fileID: 2562932717650690120, guid: bd9c8165749ea024e993a4e54afc46c8, type: 2}
+    value: {fileID: 861785571}
+  - key: {fileID: 7574925581664021260, guid: bd9c8165749ea024e993a4e54afc46c8, type: 2}
+    value: {fileID: 1133785741}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &861785570
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,10 +605,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sudah beberapa hari ini Sena mendengar kabar bahwa beberapa warga sering
-    diganggu oleh penghuni Setra Gandamayit.
-
-'
+  m_text: Namun, Sena tak gentar. Ia sama sekali tak mundur barang selangkah kaki
+    pun.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -715,7 +713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133785743}
-  - component: {fileID: 1133785742}
+  - component: {fileID: 1133785744}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -723,18 +721,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1133785742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133785741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef2c922d72209f47a6afc28172232cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1133785743
 Transform:
   m_ObjectHideFlags: 0
@@ -750,6 +736,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133785744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133785741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 759295a07d972b3469140c04574ed8b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1374708082
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +875,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sena kemudian menantang seluruh penghuni Setra Gandamayit.
+  m_text: "Sena justru menyambut penghuni Setra Gandamayit dengan serangan yang tak
+    kalah hebatnya.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1268,8 +1267,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Suara tantangannya yang menggelegar memuat seluruh penghuni Setra Gandamayit
-    menyerang Sena.\r"
+  m_text: Rupanya kesaktian Sena jauh diatas penghuni Setra Gandamayit.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1426,7 +1424,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dahulu kala ada pria bernama Sena...
+  m_text: 'enghuni Setra Gandamayit yang terdiri dari siluman, hantu, dan raksasa
+    dengan wajah yang mengerikan segera menyerang Sena.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

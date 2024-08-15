@@ -1392,7 +1392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss: {fileID: 1693922222514009280}
   delay: 3
-  sceneName: CSBoss
+  sceneName: CS4
 --- !u!1 &195237930
 GameObject:
   m_ObjectHideFlags: 0
@@ -18533,7 +18533,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775299947}
-  m_LocalRotation: {x: 0.13458051, y: -0.693029, z: 0.13411744, w: 0.6954218}
+  m_LocalRotation: {x: 0.13458051, y: -0.69302905, z: 0.13411744, w: 0.6954218}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35701,7 +35701,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5130655153926166604}
-  m_LocalRotation: {x: 0.13458052, y: -0.693029, z: 0.13411744, w: 0.69542176}
+  m_LocalRotation: {x: 0.13458051, y: -0.69302905, z: 0.13411744, w: 0.6954218}
   m_LocalPosition: {x: 38.569984, y: -15.040924, z: 6.5125937}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

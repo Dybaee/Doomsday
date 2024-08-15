@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 379914622}
   - component: {fileID: 379914621}
   - component: {fileID: 379914620}
-  - component: {fileID: 379914619}
+  - component: {fileID: 379914623}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -168,37 +168,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!320 &379914619
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379914617}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 2
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 3418445050770131325, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1133785741}
-  - key: {fileID: 168484576771120791, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1950833962}
-  - key: {fileID: -5188760386194950902, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1133180556}
-  - key: {fileID: 2592531340753255937, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1075012329}
-  - key: {fileID: -1637397736725374392, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1503877042}
-  - key: {fileID: -2052917457141206142, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 1932002464}
-  - key: {fileID: -1082517059345640770, guid: b6d6f11cfca914046a579312d088464f, type: 2}
-    value: {fileID: 861785571}
-  m_ExposedReferences:
-    m_References: []
 --- !u!114 &379914620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +229,37 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!320 &379914623
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379914617}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: c4753ccbdd13e7745814b07e1564283f, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 6198830642787382603, guid: c4753ccbdd13e7745814b07e1564283f, type: 2}
+    value: {fileID: 1950833962}
+  - key: {fileID: -7991076098050467623, guid: c4753ccbdd13e7745814b07e1564283f, type: 2}
+    value: {fileID: 1133180556}
+  - key: {fileID: -7832922341573556706, guid: c4753ccbdd13e7745814b07e1564283f, type: 2}
+    value: {fileID: 1075012329}
+  - key: {fileID: -8146774895674525761, guid: c4753ccbdd13e7745814b07e1564283f, type: 2}
+    value: {fileID: 1503877042}
+  - key: {fileID: 8359143561864007035, guid: c4753ccbdd13e7745814b07e1564283f, type: 2}
+    value: {fileID: 1932002464}
+  - key: {fileID: -4431257323703854290, guid: c4753ccbdd13e7745814b07e1564283f, type: 2}
+    value: {fileID: 861785571}
+  - key: {fileID: 3555757400137083600, guid: c4753ccbdd13e7745814b07e1564283f, type: 2}
+    value: {fileID: 1133785741}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &861785570
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,8 +447,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sena yang tidak terima dengan perbuatan penghuni Setra Gandamayit berniat
-    membuat perhitungan dan menuntut balas.
+  m_text: Sang Bathari yang memiliki paras menyeramkan dan sakti menyerang Sena dengan
+    segala kekuatan dan kemampuan yang dimilikinya.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -605,10 +605,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sudah beberapa hari ini Sena mendengar kabar bahwa beberapa warga sering
-    diganggu oleh penghuni Setra Gandamayit.
-
-'
+  m_text: Sekarang giliran pemimpin Setra Gandamayit yang bernama Bathari Durga maju
+    ke medan pertempuran.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -617,7 +615,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -715,7 +713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1133785743}
-  - component: {fileID: 1133785742}
+  - component: {fileID: 1133785744}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -723,18 +721,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1133785742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133785741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef2c922d72209f47a6afc28172232cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1133785743
 Transform:
   m_ObjectHideFlags: 0
@@ -750,6 +736,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133785744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133785741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e469da8912d0d394bae4eb8562652870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1374708082
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sena kemudian menantang seluruh penghuni Setra Gandamayit.
+  m_text: Sena sempat kuwalahan, tetapi Sena tidak menyerah.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -886,7 +884,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1268,8 +1266,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Suara tantangannya yang menggelegar memuat seluruh penghuni Setra Gandamayit
-    menyerang Sena.\r"
+  m_text: Dalam suatu ketika Sena dapat melakukan serangan balik hingga membuat Bathari
+    Durga dapat ditumbangkan.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1278,7 +1276,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1426,7 +1424,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dahulu kala ada pria bernama Sena...
+  m_text: "Setelah semua penghuni dapat dikalahkan Sena.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1435,7 +1433,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

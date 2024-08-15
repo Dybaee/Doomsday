@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Stage1 : MonoBehaviour
+public class CS3 : MonoBehaviour
 {
     void OnEnable()
     {
-        SceneManager.LoadScene("Stage 1");
+        SceneManager.LoadScene("Stage 3");
     }
 }
