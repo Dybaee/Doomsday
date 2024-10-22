@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using static System.TimeZoneInfo;
 
@@ -8,16 +10,28 @@ public class Stage1SceneMovement : MonoBehaviour
 {
     private bool doorArea = false;
     public GameObject swordActive;
+    public GameObject crownActive;
+    public GameObject Reqtext;
+    public GameObject GuidesText;
+
+    private Guides3Tutorial guide;
+
 
     [SerializeField] private Animator myAnimationController;
     public GameObject loadingScreen;
     public float transitionTime = 1f;
+
+    private void Start()
+    {
+        guide = FindAnyObjectByType<Guides3Tutorial>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             doorArea = true;
+            guide.OpenTheDoor();
         }
 
     }
@@ -27,15 +41,29 @@ public class Stage1SceneMovement : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             doorArea = false;
+            Reqtext.SetActive(false);
         }
 
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F) && doorArea && swordActive.activeSelf)
+        if (!doorArea || (swordActive.activeSelf && crownActive.activeSelf))
         {
-            StartCoroutine(LoadLevel("CutsceneSand"));
+            Reqtext.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) && doorArea)
+        {
+            if (swordActive.activeSelf && crownActive.activeSelf)
+            {
+                GuidesText.SetActive(false);
+                StartCoroutine(LoadLevel("CutsceneSand"));
+            }
+            else
+            {
+                Reqtext.SetActive(true); // Show the requirement message only if conditions are not met
+            }
         }
     }
 

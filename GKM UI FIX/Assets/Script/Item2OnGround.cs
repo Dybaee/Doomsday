@@ -4,27 +4,28 @@ using UnityEngine;
 
 public class Item2OnGround : MonoBehaviour
 {
-    public GameObject interactionText;
-    public GameObject shinyFX;
     public GameObject item;
-    public GameObject birdBoss;
-    [SerializeField] private Transform player;
-
-    private bool isPlayerNearby = false;
+    [SerializeField] Transform player;
+    public GameObject interactionText;
+    private GameObject shinyFX;
     private bool inArea = false;
+    private bool isPlayerNearby = false;
     private Camera playerCamera;
-    private Animator anim;
-    private WeaponDamage weaponDamage;
+    private Guides2Tutorial guide;
+    public GameObject requiredObject;
+    public PlayerNewCombat combatPlayer;
+    public GameObject Reqtext;
 
+    // Start is called before the first frame update
     void Start()
     {
+        shinyFX = GameObject.FindGameObjectWithTag("ShinyFX1");
+        guide = FindAnyObjectByType<Guides2Tutorial>();
         interactionText.SetActive(false);
         playerCamera = Camera.main;
-        anim = GetComponent<Animator>();
-        weaponDamage = GetComponent<WeaponDamage>();
-        shinyFX = GameObject.FindGameObjectWithTag("ShinyFX");
     }
 
+    // Update is called once per frame
     void Update()
     {
         if (isPlayerNearby)
@@ -32,16 +33,23 @@ public class Item2OnGround : MonoBehaviour
             interactionText.transform.LookAt(playerCamera.transform);
             interactionText.transform.rotation = Quaternion.LookRotation(playerCamera.transform.forward);
 
-            if (Input.GetKeyDown(KeyCode.F) && birdBoss == null)
+            if (inArea && Input.GetKeyDown(KeyCode.F))
             {
-                Interact();
-                Destroy(interactionText);
+                // Check if the requiredObject is active before allowing pickup
+                if (requiredObject != null && requiredObject.activeSelf)
+                {
+                    ActivateItem();
+                    if (interactionText != null)
+                    {
+                        Destroy(interactionText);
+                        Debug.Log("Interaction Destroyed");
+                    }
+                }
+                else
+                {
+                    Reqtext.SetActive(true);
+                }
             }
-        }
-
-        if (inArea && Input.GetKeyDown(KeyCode.F) && birdBoss == null)
-        {
-            ActivateItem();
         }
     }
 
@@ -49,8 +57,8 @@ public class Item2OnGround : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerNearby = true;
             inArea = true;
+            isPlayerNearby = true;
             interactionText.SetActive(true);
         }
     }
@@ -59,23 +67,21 @@ public class Item2OnGround : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerNearby = false;
             inArea = false;
+            isPlayerNearby = false;
             interactionText.SetActive(false);
+            Reqtext.SetActive(false);
         }
-    }
-
-    private void Interact()
-    {
-        Debug.Log("ITEM COLLECTED");
-        ActivateItem();
     }
 
     private void ActivateItem()
     {
+        Destroy(gameObject);
         shinyFX.SetActive(false);
-        anim.SetBool("OpenChest", true);
-        Destroy(gameObject, 5f);
         item.SetActive(true);
+
+        combatPlayer.crownUsed.SetActive(true);
+        guide.ItemTake();
+        Debug.Log("ITEM COLLECTED");
     }
 }

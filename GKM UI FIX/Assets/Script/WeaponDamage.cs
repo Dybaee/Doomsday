@@ -9,7 +9,7 @@ public class WeaponDamage : MonoBehaviour
     public float damage;
     public float addDamage = 7f;
     public GameObject itemCrown;
-    public bool cheatMode = false; // Add this line
+    public bool cheatMode = false; 
 
     BoxCollider triggerBox;
     EnemyAI enemy;
@@ -26,7 +26,7 @@ public class WeaponDamage : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) // 
+        if (Input.GetKeyDown(KeyCode.P)) 
         {
             cheatMode = !cheatMode;
             Debug.Log("Cheat mode: " + (cheatMode ? "ON" : "OFF"));

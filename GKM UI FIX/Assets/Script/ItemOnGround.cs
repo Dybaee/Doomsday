@@ -12,10 +12,15 @@ public class ItemOnGround : MonoBehaviour
     private bool isPlayerNearby = false;
     private Camera playerCamera;
 
+    private GuidesTutorial guide;
+
+    public PlayerNewCombat combatPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
         shinyFX = GameObject.FindGameObjectWithTag("ShinyFX");
+        guide = FindAnyObjectByType<GuidesTutorial>();
         interactionText.SetActive(false);
         playerCamera = Camera.main;
     }
@@ -65,11 +70,9 @@ public class ItemOnGround : MonoBehaviour
         Destroy(gameObject);
         shinyFX.SetActive(false);
         item.SetActive(true);
-        CombatPlayer combatPlayer = FindObjectOfType<CombatPlayer>();
-        if (combatPlayer != null)
-        {
-            combatPlayer.UsingSword();
-        }
+
+        combatPlayer.swordUsed.SetActive(true);
+        guide.ItemTake();
         Debug.Log("ITEM COLLECTED");
     }
 }

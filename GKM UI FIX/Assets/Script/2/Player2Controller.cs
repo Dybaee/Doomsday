@@ -37,7 +37,7 @@ public class Player2Controller : MonoBehaviour
     [SerializeField] GameObject _setting;
     HpStats _hpStats;
 
-    private Combat2Player combatPlayer;
+    private PlayerNewCombat combatPlayer;
 
     private bool isAlive = true;
     bool gamePaused;
@@ -58,6 +58,7 @@ public class Player2Controller : MonoBehaviour
     public float regenDelay = 5f; // Delay after being hit 
     private float regenTimer = 0f;
 
+    public string pickupTag = "Pickup";
 
     private void Awake()
     {
@@ -70,7 +71,7 @@ public class Player2Controller : MonoBehaviour
         WalkFX = GameObject.FindGameObjectWithTag("walkfx").GetComponent<ParticleSystem>();
         animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
-        combatPlayer = GetComponent<Combat2Player>();
+        combatPlayer = GetComponent<PlayerNewCombat>();
         _hpStats = GetComponent<HpStats>();
         HP = maxHP;
         healthSlider.maxValue = maxHP;
@@ -99,7 +100,7 @@ public class Player2Controller : MonoBehaviour
                 Run();
 
                 // Check player is not attacking or not hit by enemies
-                if (!combatPlayer.IsAttacking && regenTimer <= 0)
+                if (regenTimer <= 0)
                 {
                     HP += regenAmountPerSecond * Time.deltaTime;
                     HP = Mathf.Clamp(HP, 0f, maxHP); // Ensure HP stays within bounds
@@ -138,13 +139,12 @@ public class Player2Controller : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
+            Pickup();
         }
     }
 
     void Move()
     {
-        if (!isAlive || combatPlayer.IsAttacking)
-            return;
 
         // Get Input for movement
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -270,5 +270,20 @@ public class Player2Controller : MonoBehaviour
     void UpdatePlayerHealthUI()
     {
         healthSlider.value = HP;
+    }
+
+    void Pickup()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2f); // Check nearby objects in a radius
+            foreach (Collider hitCollider in hitColliders)
+            {
+                if (hitCollider.CompareTag(pickupTag)) // Check if object has the correct tag
+                {
+                    animator.SetTrigger("Pickup");
+                }
+            }
+        }
     }
 }
